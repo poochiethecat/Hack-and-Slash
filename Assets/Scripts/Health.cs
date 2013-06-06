@@ -3,18 +3,43 @@ using System.Collections;
 
 public class Health : MonoBehaviour
 {
-    
+
     public int maxHealth = 100;
     public int curHealth = 100;
-    
+
     public bool showHealthBar = false;
-    
+
     public FontStyle fontStyle;
-    
+
+
+    // Style of the bar-part of the healthbar
+    private GUIStyle healthBarStyle;
+    // style for the text
+    private GUIStyle healthBarStyleText;
+    // Style for the border/outer box
+    private GUIStyle healthBarBoxStyle_outer = null;
+    // Style for the background/inner box
+    private GUIStyle healthBarBoxStyle_inner = null;
+
     private Transform myTransform;
-    
+
+    // Rectangle of the healthbar, gets smaller with change in health
     private Rect healthBar;
-    
+    // Rectangle of the max healthbar
+    private Rect healthBarBox_inner;
+    // Rectangle for the border, is healthBarBorder pixels bigger in all directions than the inner box
+    private Rect healthBarBox_outer;
+    // Border size around the health
+    private float healthBarBorder = 1.0f;
+
+
+    // Background Texture, visible if health < 100%
+    private Texture2D backgroundTexture;
+    // Border Texture, this color takes the border
+    private Texture2D borderTexture;
+    // transparent texture for the background of the text
+    private Texture2D clearTexture;
+
     private Font font;
     
     private bool firstrun = true;
@@ -72,24 +97,31 @@ public class Health : MonoBehaviour
        myTransform = transform;
 
         fontStyle = FontStyle.Normal;
-        
-        healthBar = new Rect(10, 0, Screen.width / 2, 20);
-        
+
+        int width = Screen.width/2;
+        healthBar = new Rect(10, 0,width, 20);
+
         switch (tag) {
         case "Player":
             healthBar.y = 10;
             showHealthBar = true;
             break;
         case "Enemy":
-            healthBar.y = 40;
+            healthBar.y = 60;
 //            Debug.Log("Enemy Health Bar set for " + myTransform.name);
 //            Targeting targeting = (Targeting)GameObject.FindGameObjectWithTag("Player").GetComponent("Targeting");
 //            if(targeting != null)
 //                healthBar.y = 40 + (30 * targeting.targets.IndexOf(myTransform));
             break;
         }
+        healthBarBox_inner = new Rect(healthBar.x, healthBar.y, healthBar.width, healthBar.height);
+        healthBarBox_outer = new Rect(healthBar.x-healthBarBorder, healthBar.y-healthBarBorder, healthBar.width+2*healthBarBorder, healthBar.height+2*healthBarBorder);
+
     }
-    
+
+
+
+
     // Update is called once per frame
     void Update ()
     {
@@ -112,8 +144,6 @@ public class Health : MonoBehaviour
             createStyles();
         }
         //GUI.skin.box.fontStyle = fontStyle;
-        
-        if(showHealthBar) GUI.Box(healthBar, myTransform.name + " = " + curHealth + "/" + maxHealth);
 
         if(showHealthBar)
         {
@@ -131,7 +161,7 @@ public class Health : MonoBehaviour
         }
 
     }
-    
+
     public void AdjustCurrentHealth (int adj)
     {
         curHealth += adj;
@@ -142,7 +172,7 @@ public class Health : MonoBehaviour
             targeting.RemoveTarget(myTransform);
             Destroy(gameObject);
         }
-            
+
 //            curHealth = 0;
         healthBar.width = (Screen.width / 2) * (curHealth / (float)maxHealth);
     }
