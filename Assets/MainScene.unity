@@ -170,7 +170,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 341494391}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9eb2709b3f134025abbb8711a385616, type: 3}
   m_Name: 
@@ -183,14 +183,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 341494391}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7366778f156b64f14afa50a29b87779d, type: 3}
   m_Name: 
   target: {fileID: 899210504}
-  moveSpeed: 3
-  rotationSpeed: 5
-  maxDistance: 0
+  moveSpeed: 0
+  rotationSpeed: 2
+  maxDistance: 2
 --- !u!23 &341494395
 Renderer:
   m_ObjectHideFlags: 0
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038946075}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9eb2709b3f134025abbb8711a385616, type: 3}
   m_Name: 
@@ -569,14 +569,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038946075}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7366778f156b64f14afa50a29b87779d, type: 3}
   m_Name: 
   target: {fileID: 899210504}
-  moveSpeed: 3
-  rotationSpeed: 5
-  maxDistance: 0
+  moveSpeed: 0
+  rotationSpeed: 2
+  maxDistance: 2
 --- !u!23 &1038946079
 Renderer:
   m_ObjectHideFlags: 0
@@ -778,7 +778,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalRotation.y
-      value: .552443564
+      value: .552443504
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalRotation.z
@@ -786,7 +786,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .833550334
+      value: .833550274
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_Name
@@ -876,14 +876,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2137288354}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7366778f156b64f14afa50a29b87779d, type: 3}
   m_Name: 
   target: {fileID: 899210504}
-  moveSpeed: 3
-  rotationSpeed: 5
-  maxDistance: 0
+  moveSpeed: 0
+  rotationSpeed: 2
+  maxDistance: 2
 --- !u!114 &2137288360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2137288354}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9eb2709b3f134025abbb8711a385616, type: 3}
   m_Name: 
