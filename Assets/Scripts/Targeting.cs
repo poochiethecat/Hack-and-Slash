@@ -6,7 +6,8 @@ public class Targeting : MonoBehaviour {
     public List<Transform> targets;
     public Transform selectedTarget;
     
-    public Color defaultColor;
+    public Color targetingColor;
+   
     
     private Transform myTransform;
 
@@ -22,7 +23,6 @@ public class Targeting : MonoBehaviour {
         sortTargetsByDistance();
         Debug.Log("Enemies added to targeting system");
         
-        defaultColor = targets[0].renderer.material.color;
     }
     
     public void AddAllEnemies(){
@@ -59,13 +59,11 @@ public class Targeting : MonoBehaviour {
     }
     
     private void SelectTarget(){
-        selectedTarget.renderer.material.color = Color.red;
-        ((State)selectedTarget.GetComponent("State")).target();
+        State.getState(selectedTarget).target(targetingColor);
     }
     
     private void DeselectTarget(){
-        selectedTarget.renderer.material.color = defaultColor;
-        ((State)selectedTarget.GetComponent("State")).untarget();
+        State.getState(selectedTarget).untarget();
         selectedTarget = null;
     }
     

@@ -20,16 +20,16 @@ public class Health : MonoBehaviour
        myTransform = transform;
         
 
-        int[] position = {10,0};
+        int[] bar_position = {10,0};
         switch (tag) {
         case "Player":
-            position[1] = 10;
+            bar_position[1] = 10;
             break;
         case "Enemy":
-            position[1] = 60;
+            bar_position[1] = 60;
             break;
         }
-        healthbar = new HealthBar(position[0], position[1], Screen.width/2, myTransform);
+        healthbar = new HealthBar(bar_position[0], bar_position[1], Screen.width/2, myTransform);
     }
    
  
@@ -44,7 +44,7 @@ public class Health : MonoBehaviour
 
     void OnGUI ()
     {
-        switch (((State)myTransform.GetComponent("State")).state)
+        switch (State.getState(myTransform).state)
         {
         case StateName.targetted:
             healthbar.draw(myTransform.name, curHealth, maxHealth);

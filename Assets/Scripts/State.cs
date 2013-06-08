@@ -4,6 +4,7 @@ using System.Collections;
 public class State : MonoBehaviour {
     
     private StateName _state;
+    private Color _color;
     
     public StateName state {
         get {
@@ -14,6 +15,14 @@ public class State : MonoBehaviour {
         }
     }
 
+    public Color color {
+        get {
+            return this._color;
+        }
+        set {
+            _color = value;
+        }
+    }
 	// Use this for initialization
 	void Start () {
         switch (tag) {
@@ -33,15 +42,21 @@ public class State : MonoBehaviour {
 	
 	}
     
-    public void target()
+    public void target(Color color)
     {
         state = StateName.targetted;
+        this.color = color;
+        
     }
     public void untarget()
     {
         state = StateName.normal;
     }
     
+    public static State getState(Transform entity)
+    {
+        return (State)entity.GetComponent("State");
+    }
     
 
 }

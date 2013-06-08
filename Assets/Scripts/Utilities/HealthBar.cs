@@ -105,7 +105,7 @@ public class HealthBar
     private void updateStyles(int curHealth, int maxHealth)
     {
         healthBarStyle.normal.background = healthTexture(curHealth, maxHealth);
-        switch(((State)myTransform.GetComponent("State")).state)
+        switch(State.getState(myTransform).state)
         {
             case StateName.targetted:
                 healthBarStyleText.fontStyle = FontStyle.BoldAndItalic;

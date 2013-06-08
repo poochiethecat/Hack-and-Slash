@@ -32,5 +32,8 @@ public class EnemyAI : MonoBehaviour {
         //Move towards target
             myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
         }
+        
+
+        
     }
 }
