@@ -32,25 +32,18 @@ public class HealthBar
     // transparent texture for the background of the text
     private Texture2D clearTexture;
     
-    private float x,y;
-    
     private bool firstrun;
     
     
     
 
     
-    public HealthBar (float x, float y, float width, Transform transform )
+    public HealthBar (Transform transform )
     {
-        this.x = x;
-        this.y = y;
         this.myTransform = transform;
         initTextures();
 
-        healthBar = new Rect(this.x, this.y,width, 20);
 
-        healthBarBox_inner = new Rect(healthBar.x, healthBar.y, healthBar.width, healthBar.height);
-        healthBarBox_outer = new Rect(healthBar.x-healthBarBorder, healthBar.y-healthBarBorder, healthBar.width+2*healthBarBorder, healthBar.height+2*healthBarBorder);
         firstrun = true;
     }
     
@@ -115,18 +108,64 @@ public class HealthBar
                 break;
         }
     }
+    
+    
+    private void updateRectangles()
+    {   
+        
+        Health health = (Health)myTransform.GetComponent("Health");
 
+        float x = health.barPositionx;
+        float y = health.barPositiony;
+        float width = health.width;
+        float height = health.height;
+        if (y < 0)
+        {
+            switch (myTransform.tag) {
+                case "Player":
+                    y = 10;
+                    break;
+                case "Enemy":
+                    y = 60;
+                    break;
+            }
+        }
+        if (x < 0)
+        {
+            x = 10;
+        }
+        if (width < 0)
+        {
+            width = Screen.width/2;
+        }
+        if (height < 0)
+        {
+            height = 20;
+        }
+ 
+        healthBar = new Rect(x,y,width, height);
+        healthBarBox_inner = new Rect(healthBar.x, healthBar.y, healthBar.width, healthBar.height);
+        healthBarBox_outer = new Rect(healthBar.x-healthBarBorder, healthBar.y-healthBarBorder, healthBar.width+2*healthBarBorder, healthBar.height+2*healthBarBorder);
+        
+    }
 
+ 
+    
     
     public void draw(string name, int curHealth, int maxHealth)
     {
+        
+        
         if (firstrun)
         {
             createStyles();
             firstrun = false;
         }
         updateStyles(curHealth, maxHealth);
-        healthBar.width = (Screen.width / 2) * (curHealth / (float)maxHealth);
+        updateRectangles();
+
+
+        healthBar.width = ((Health)myTransform.GetComponent("Health")).Width * (curHealth / (float)maxHealth);
         
         GUI.Box(healthBarBox_outer,"",healthBarBoxStyle_outer);
         GUI.Box(healthBarBox_inner,"",healthBarBoxStyle_inner);

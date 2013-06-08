@@ -7,6 +7,12 @@ public class Health : MonoBehaviour
 
     public int maxHealth = 100;
     public int curHealth = 100;
+    
+    public float barPositionx = -1;
+    public float barPositiony = -1;
+    
+    public float width = -1;
+    public float height = -1;
 
     
     public HealthBar healthbar;
@@ -20,18 +26,18 @@ public class Health : MonoBehaviour
        myTransform = transform;
         
 
-        int[] bar_position = {10,0};
-        switch (tag) {
-        case "Player":
-            bar_position[1] = 10;
-            break;
-        case "Enemy":
-            bar_position[1] = 60;
-            break;
-        }
-        healthbar = new HealthBar(bar_position[0], bar_position[1], Screen.width/2, myTransform);
+        
+        healthbar = new HealthBar(myTransform);
     }
-   
+
+    public float Width {
+        get {
+            if (width < 0)
+                return Screen.width/2;
+            else
+                return this.width;
+        }
+    }   
  
     
    
@@ -44,6 +50,7 @@ public class Health : MonoBehaviour
 
     void OnGUI ()
     {
+
         switch (State.getState(myTransform).state)
         {
         case StateName.targetted:
