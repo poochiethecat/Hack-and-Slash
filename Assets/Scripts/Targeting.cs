@@ -60,16 +60,12 @@ public class Targeting : MonoBehaviour {
     
     private void SelectTarget(){
         selectedTarget.renderer.material.color = Color.red;
-        Health health = (Health)selectedTarget.GetComponent("Health");
-        health.fontStyle = FontStyle.BoldAndItalic;
-        health.showHealthBar = true;
+        ((Health)selectedTarget.GetComponent("Health")).select();
     }
     
     private void DeselectTarget(){
         selectedTarget.renderer.material.color = defaultColor;
-        Health health = (Health)selectedTarget.GetComponent("Health");
-        health.fontStyle = FontStyle.Normal;
-        health.showHealthBar = false;
+        ((Health)selectedTarget.GetComponent("Health")).deselect();
         selectedTarget = null;
     }
     

@@ -19,9 +19,20 @@ public class ColoredTexture {
         return texture;
     }
     
+    public static Texture2D generateTexture(int width, int height, Color color )
+    {
+        return generateTexture(width, height, color.r, color.g, color.b, color.a);
+    }
+        
+    
     public static Texture2D generatePixel(float r=0, float g=0, float b=0, float a=1)
     {
         return generateTexture(width:1,height:1,r:r,g:g,b:b,a:a);
+    }
+    
+    public static Texture2D generatePixel(Color color)
+    {
+        return generateTexture(1,1, color);
     }
 }
 
