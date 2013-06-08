@@ -144,6 +144,7 @@ GameObject:
   - 114: {fileID: 341494393}
   - 114: {fileID: 341494392}
   - 114: {fileID: 341494399}
+  - 114: {fileID: 341494400}
   m_Layer: 0
   m_Name: Evil Cubie 3
   m_TagString: Enemy
@@ -163,6 +164,12 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
+  bar:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!114 &341494393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +209,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 811e7cca5b34eb94b865d5d21f69dbc1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -247,6 +254,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24ddf2edb8de0f54e87a757c878ac766, type: 3}
+  m_Name: 
+--- !u!114 &341494400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341494391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d457a3a1d2968264c85eccd21476a62d, type: 3}
   m_Name: 
 --- !u!1 &472791352
 GameObject:
@@ -497,6 +514,12 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
+  bar:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!114 &899210510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +545,7 @@ MonoBehaviour:
   m_Name: 
   targets: []
   selectedTarget: {fileID: 0}
-  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  targetingColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!114 &899210512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +571,7 @@ GameObject:
   - 114: {fileID: 1038946077}
   - 114: {fileID: 1038946076}
   - 114: {fileID: 1038946083}
+  - 114: {fileID: 1038946084}
   m_Layer: 0
   m_Name: Evil Cubie 2
   m_TagString: Enemy
@@ -567,6 +591,12 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
+  bar:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!114 &1038946077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,7 +636,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: f850fa03e949a14478f16317f55fff00, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -651,6 +681,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24ddf2edb8de0f54e87a757c878ac766, type: 3}
+  m_Name: 
+--- !u!114 &1038946084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1038946075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d457a3a1d2968264c85eccd21476a62d, type: 3}
   m_Name: 
 --- !u!1 &1467619022
 GameObject:
@@ -843,6 +883,7 @@ GameObject:
   - 114: {fileID: 2137288361}
   - 114: {fileID: 2137288360}
   - 114: {fileID: 2137288362}
+  - 114: {fileID: 2137288363}
   m_Layer: 0
   m_Name: Evil Cubie 1
   m_TagString: Enemy
@@ -862,7 +903,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: eb641495398b29e459f017dc726a95c3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -924,6 +965,12 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
+  bar:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!114 &2137288361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,4 +993,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24ddf2edb8de0f54e87a757c878ac766, type: 3}
+  m_Name: 
+--- !u!114 &2137288363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137288354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d457a3a1d2968264c85eccd21476a62d, type: 3}
   m_Name: 

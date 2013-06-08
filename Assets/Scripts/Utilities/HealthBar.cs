@@ -21,8 +21,6 @@ public class HealthBar
     private Rect healthBarBox_inner;
     // Rectangle for the border, is healthBarBorder pixels bigger in all directions than the inner box
     private Rect healthBarBox_outer;
-    // Border size around the health
-    private float healthBarBorder = 1.0f;
 
 
     // Background Texture, visible if health < 100%
@@ -35,19 +33,15 @@ public class HealthBar
     private bool firstrun;
     
     
-    
-
-    
-    public HealthBar (Transform transform )
+    public HealthBar(Transform transform)
     {
-        this.myTransform = transform;
+       this.myTransform = transform;
         initTextures();
 
 
         firstrun = true;
     }
-    
-    
+ 
     
     
   
@@ -114,12 +108,29 @@ public class HealthBar
     {   
         
         Health health = (Health)myTransform.GetComponent("Health");
+        RectOffset border = health.barBorder;
+        if (border.top < 0)
+        {
+            border.top = 1;
+        }        
+        if (border.right < 0)
+        {
+            border.right = 1;
+        }        
+        if (border.left < 0)
+        {
+            border.left = 1;
+        }        
+        if (border.bottom < 0)
+        {
+            border.bottom = 1;
+        }
 
-        float x = health.barPositionx;
-        float y = health.barPositiony;
-        float width = health.width;
-        float height = health.height;
-        if (y < 0)
+        float x = health.bar.x;
+        float y = health.bar.y;
+        float width = health.bar.width;
+        float height = health.bar.height;
+        if (y <= 0)
         {
             switch (myTransform.tag) {
                 case "Player":
@@ -130,22 +141,22 @@ public class HealthBar
                     break;
             }
         }
-        if (x < 0)
+        if (x <= 0)
         {
             x = 10;
         }
-        if (width < 0)
+        if (width <= 0)
         {
             width = Screen.width/2;
         }
-        if (height < 0)
+        if (height <= 0)
         {
             height = 20;
-        }
- 
+        }        
+
         healthBar = new Rect(x,y,width, height);
         healthBarBox_inner = new Rect(healthBar.x, healthBar.y, healthBar.width, healthBar.height);
-        healthBarBox_outer = new Rect(healthBar.x-healthBarBorder, healthBar.y-healthBarBorder, healthBar.width+2*healthBarBorder, healthBar.height+2*healthBarBorder);
+        healthBarBox_outer = new Rect(healthBar.x-border.left, healthBar.y-border.top, healthBar.width+border.right+border.left, healthBar.height+border.bottom+border.top);
         
     }
 

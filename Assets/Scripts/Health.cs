@@ -8,14 +8,12 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
     public int curHealth = 100;
     
-    public float barPositionx = -1;
-    public float barPositiony = -1;
     
-    public float width = -1;
-    public float height = -1;
+    public Rect bar;
+    public RectOffset barBorder;
 
     
-    public HealthBar healthbar;
+    private HealthBar healthbar;
     private Transform myTransform;
  
    
@@ -24,18 +22,19 @@ public class Health : MonoBehaviour
     void Start ()
     {
        myTransform = transform;
+        this.healthbar = new HealthBar(myTransform);
         
 
         
-        healthbar = new HealthBar(myTransform);
+//        healthbar = new HealthBar(myTransform);
     }
 
     public float Width {
         get {
-            if (width < 0)
+            if (bar.width <= 0)
                 return Screen.width/2;
             else
-                return this.width;
+                return this.bar.width;
         }
     }   
  
