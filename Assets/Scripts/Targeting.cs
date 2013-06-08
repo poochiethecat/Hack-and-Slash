@@ -6,7 +6,11 @@ public class Targeting : MonoBehaviour {
     public List<Transform> targets;
     public Transform selectedTarget;
     
-    public Color targetingColor;
+    public Color targetingColor = Color.red;
+    
+    public int targetingDistance = 30;
+    
+
    
     
     private Transform myTransform;
@@ -39,6 +43,7 @@ public class Targeting : MonoBehaviour {
         targets.Sort(delegate(Transform t1, Transform t2){ 
             return Vector3.Distance(t1.position, myTransform.position).CompareTo(Vector3.Distance(t2.position, myTransform.position));
         });
+        
     }
     
     private void TargetEnemy(){
@@ -54,17 +59,20 @@ public class Targeting : MonoBehaviour {
             else index = 0;
             DeselectTarget();
         }
-        selectedTarget = targets[index];
-        SelectTarget();
+        SelectTarget(targets[index]);
     }
     
-    private void SelectTarget(){
+    private void SelectTarget(Transform t){
+        selectedTarget = t;
         State.getState(selectedTarget).target(targetingColor);
     }
     
     private void DeselectTarget(){
-        State.getState(selectedTarget).untarget();
-        selectedTarget = null;
+        if (selectedTarget != null)
+        {
+            State.getState(selectedTarget).untarget();
+            selectedTarget = null;
+        }
     }
     
     public void RemoveTarget(Transform t){
@@ -74,9 +82,22 @@ public class Targeting : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
+        RaycastHit  hit;
+        // Raycast to find out what object the crosshair hits.
+        if (Physics.Raycast(myTransform.position,myTransform.forward, out hit)) 
+        {
+//            Debug.Log("Targeting: " + hit.transform.name);
+            if (hit.transform != selectedTarget)
+            {
+                DeselectTarget();
+                SelectTarget(hit.transform);
+            }
+        } else {
+            DeselectTarget();
+        }
         
-        if(Input.GetKeyDown(KeyCode.Tab)) TargetEnemy();
-        if (selectedTarget != null && Input.GetKeyDown(KeyCode.Escape)) DeselectTarget();
+//        if(Input.GetKeyDown(KeyCode.Tab)) TargetEnemy();
+//        if (selectedTarget != null && Input.GetKeyDown(KeyCode.Escape)) DeselectTarget();
     
     }
 }
