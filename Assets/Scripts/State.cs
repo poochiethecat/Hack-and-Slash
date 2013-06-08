@@ -3,18 +3,27 @@ using System.Collections;
 
 public class State : MonoBehaviour {
     
-    private StateName _state;
+    private StateName _targetState;
+    private StateName _screenState;
     private Color _color;
     
-    public StateName state {
+    public StateName TargetState {
         get {
-            return this._state;
+            return this._targetState;
         }
         set {
-            _state = value;
+            _targetState = value;
         }
     }
 
+    public StateName ScreenState {
+        get {
+            return this._screenState;
+        }
+        set {
+            _screenState = value;
+        }
+    }
     public Color color {
         get {
             return this._color;
@@ -27,10 +36,10 @@ public class State : MonoBehaviour {
 	void Start () {
         switch (tag) {
             case "Player":
-                state = StateName.visible;
+                TargetState = StateName.Visible;
                 break;
             case "Enemy":
-                state = StateName.normal;
+                TargetState = StateName.Normal;
                 break;
         }
           
@@ -44,13 +53,13 @@ public class State : MonoBehaviour {
     
     public void target(Color color)
     {
-        state = StateName.targetted;
+        TargetState = StateName.Targetted;
         this.color = color;
         
     }
     public void untarget()
     {
-        state = StateName.normal;
+        TargetState = StateName.Normal;
     }
     
     public static State getState(Transform entity)
@@ -62,7 +71,9 @@ public class State : MonoBehaviour {
 }
 
 public enum StateName {
-    normal,
-    targetted,
-    visible,
+    Normal,
+    Targetted,
+    Visible,
+    OnScreen,
+    OffScreen
 }

@@ -19,7 +19,7 @@ public class RenderHelper : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         State mystate = State.getState(myTransform);
-         if (mystate.state == StateName.targetted)
+         if (mystate.TargetState == StateName.Targetted)
         {
             myTransform.renderer.material.color = mystate.color;
         }
@@ -28,4 +28,18 @@ public class RenderHelper : MonoBehaviour {
         }
 	
 	}
+    
+    void OnBecameVisible()
+    {
+        
+        Debug.Log("I just became visible: "+myTransform.name);
+        State.getState(myTransform).ScreenState = StateName.OnScreen;
+        
+    }
+    
+    void OnBecameInvisible()
+    {
+        Debug.Log("I just became invisible: "+myTransform.name); 
+        State.getState(myTransform).ScreenState = StateName.OffScreen;
+    }
 }

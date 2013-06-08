@@ -92,9 +92,9 @@ public class HealthBar
     private void updateStyles(int curHealth, int maxHealth)
     {
         healthBarStyle.normal.background = healthTexture(curHealth, maxHealth);
-        switch(State.getState(myTransform).state)
+        switch(State.getState(myTransform).TargetState)
         {
-            case StateName.targetted:
+            case StateName.Targetted:
                 healthBarStyleText.fontStyle = FontStyle.BoldAndItalic;
                 break;
             default:
@@ -163,7 +163,7 @@ public class HealthBar
  
     
     
-    public void draw(string name, int curHealth, int maxHealth)
+    public void draw(string text, int curHealth, int maxHealth, bool drawDescription = true, bool noText = false)
     {
         
         
@@ -181,7 +181,17 @@ public class HealthBar
         GUI.Box(healthBarBox_outer,"",healthBarBoxStyle_outer);
         GUI.Box(healthBarBox_inner,"",healthBarBoxStyle_inner);
         GUI.Box(healthBar,"", healthBarStyle);
-        GUI.Box(healthBarBox_inner,name + " = " + curHealth + "/" + maxHealth,healthBarStyleText);
+        if (drawDescription)
+        {
+            text = text + curHealth + "/" + maxHealth;
+        } else if (noText)
+        {
+            text = "";
+        } else
+        {
+            text = curHealth + "/" + maxHealth;
+        }
+        GUI.Box(healthBarBox_inner,text,healthBarStyleText);
     }
 }
 

@@ -8,7 +8,9 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
     public int curHealth = 100;
     
-    
+    public int healthBarBaseWidth = 300;
+    public int healthBarMaxVisibleDistance = 100;
+    public int healthBarMinWidth = 50;
     public Rect bar;
     public RectOffset barBorder;
 
@@ -23,10 +25,6 @@ public class Health : MonoBehaviour
     {
        myTransform = transform;
         this.healthbar = new HealthBar(myTransform);
-        
-
-        
-//        healthbar = new HealthBar(myTransform);
     }
 
     public float Width {
@@ -49,15 +47,43 @@ public class Health : MonoBehaviour
 
     void OnGUI ()
     {
-
-        switch (State.getState(myTransform).state)
+        State mystate = State.getState(myTransform);
+        
+        // If this entity is on scree, render the healthbar
+        if (mystate.ScreenState == StateName.OnScreen)
         {
-        case StateName.targetted:
-            healthbar.draw(myTransform.name, curHealth, maxHealth);
-            break;
-        case StateName.visible:
-            healthbar.draw(myTransform.name, curHealth, maxHealth);
-            break;
+            Vector3 screenPos = ((Camera)GameObject.FindGameObjectWithTag("MainCamera").GetComponent("Camera")).WorldToScreenPoint(myTransform.position);
+            float DistanceFromPlayer = (((Transform)GameObject.FindGameObjectWithTag("Player").GetComponent("Transform")).position - myTransform.position).magnitude;
+            
+            
+            if (DistanceFromPlayer < healthBarMaxVisibleDistance) // Don't draw if we are too far away
+            {
+                
+                double ratio_distance = 0.8*healthBarMaxVisibleDistance;
+                
+                double ratio = Math.Pow(1-DistanceFromPlayer/ratio_distance,1);
+                if (ratio < 0 ) ratio = 0;
+                Debug.Log ("Distance from Camera: "+screenPos.z + " that results in " + ratio);
+                double currentWidth = Math.Pow(1-DistanceFromPlayer/ratio_distance,3)*healthBarBaseWidth;
+                float realWidth = (float)currentWidth+healthBarMinWidth;
+                bar = new Rect(left: screenPos.x-realWidth/2, top: (float)(Screen.height - screenPos.y - ratio*50-20), width: realWidth, height: 20);
+                switch (mystate.TargetState)
+                {
+                case StateName.Targetted:
+                    healthbar.draw(myTransform.name+": ", curHealth, maxHealth,drawDescription: realWidth > 135,noText: realWidth < 80);
+                    break;
+                default:
+                    healthbar.draw(myTransform.name+": ", curHealth, maxHealth,drawDescription: realWidth > 135,noText: realWidth < 80);
+                    break;
+                }
+                
+            }
+        }
+        if (myTransform.tag == "Player")
+        {
+            bar = new Rect(0,0,0,0);
+            Debug.Log ("Drawing Player Healthbar");
+            healthbar.draw(myTransform.name+": ", curHealth, maxHealth,drawDescription: true);
         }
 
 
