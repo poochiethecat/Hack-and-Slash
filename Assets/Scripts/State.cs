@@ -36,6 +36,7 @@ public class State : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
+        Screen.lockCursor = true;
         switch (tag) {
             case "Player":
                 TargetState = StateName.Visible;
@@ -60,6 +61,7 @@ public class State : MonoBehaviour {
             {
                foreach (MouseLook look in GameObject.FindObjectsOfType(typeof(MouseLook)))
                     look.enabled = !look.enabled;
+               Screen.lockCursor = !Screen.lockCursor;
 //               camera.enabled = !camera.enabled;
                Time.timeScale = -Time.timeScale+1;
                 

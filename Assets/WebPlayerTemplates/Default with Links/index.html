@@ -58,6 +58,10 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "%UNITY_WEB_PATH%");
 			});
+
+			$('div#unityPlayer').mouseover(function(){
+			    $(this).css({cursor: 'none'});
+			});
 		-->
 		</script>
 		<style type="text/css">
@@ -108,7 +112,7 @@
 			display: none;
 		}
 		div#unityPlayer {
-			cursor: default;
+			cursor: none;
 			height: %UNITY_HEIGHT%px;
 			width: %UNITY_WIDTH%px;
 		}

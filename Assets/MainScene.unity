@@ -164,12 +164,20 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
+  healthBarBaseWidth: 300
+  healthBarMaxVisibleDistance: 100
+  healthBarMinWidth: 50
   bar:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
+  barBorder:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
 --- !u!114 &341494393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +391,7 @@ GameObject:
   - 114: {fileID: 899210510}
   - 114: {fileID: 899210511}
   - 114: {fileID: 899210512}
+  - 114: {fileID: 899210513}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -514,12 +523,20 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
+  healthBarBaseWidth: 300
+  healthBarMaxVisibleDistance: 100
+  healthBarMinWidth: 50
   bar:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
+  barBorder:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
 --- !u!114 &899210510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,7 +562,8 @@ MonoBehaviour:
   m_Name: 
   targets: []
   selectedTarget: {fileID: 0}
-  targetingColor: {r: 1, g: 0, b: 0, a: 0}
+  targetingColor: {r: 1, g: 0, b: 0, a: 1}
+  targetingDistance: 30
 --- !u!114 &899210512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +574,18 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24ddf2edb8de0f54e87a757c878ac766, type: 3}
   m_Name: 
+--- !u!114 &899210513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 899210503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e93d3035f29c34a9ebb7f55de92a9c, type: 3}
+  m_Name: 
+  crosshair: {fileID: 2800000, guid: 77cd4e9f7a36d8144984916982ba2872, type: 3}
+  crosshairSize: 80
 --- !u!1 &1038946075
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,12 +621,20 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
+  healthBarBaseWidth: 300
+  healthBarMaxVisibleDistance: 100
+  healthBarMinWidth: 50
   bar:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
+  barBorder:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
 --- !u!114 &1038946077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,12 +1003,20 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
+  healthBarBaseWidth: 300
+  healthBarMaxVisibleDistance: 100
+  healthBarMinWidth: 50
   bar:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
+  barBorder:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
 --- !u!114 &2137288361
 MonoBehaviour:
   m_ObjectHideFlags: 0
