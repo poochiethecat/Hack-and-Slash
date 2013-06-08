@@ -37,12 +37,14 @@ public class HealthBar
     private bool firstrun;
     
     
+    
 
     
-    public HealthBar (float x, float y, float width)
+    public HealthBar (float x, float y, float width, Transform transform )
     {
         this.x = x;
         this.y = y;
+        this.myTransform = transform;
         initTextures();
 
         healthBar = new Rect(this.x, this.y,width, 20);
@@ -103,18 +105,26 @@ public class HealthBar
     private void updateStyles(int curHealth, int maxHealth)
     {
         healthBarStyle.normal.background = healthTexture(curHealth, maxHealth);
+        switch(((State)myTransform.GetComponent("State")).state)
+        {
+            case StateName.targetted:
+                healthBarStyleText.fontStyle = FontStyle.BoldAndItalic;
+                break;
+            default:
+                healthBarStyleText.fontStyle = FontStyle.Normal;
+                break;
+        }
     }
 
 
     
-    public void draw(string name, int curHealth, int maxHealth, FontStyle style)
+    public void draw(string name, int curHealth, int maxHealth)
     {
         if (firstrun)
         {
             createStyles();
             firstrun = false;
         }
-        healthBarStyleText.fontStyle = style;
         updateStyles(curHealth, maxHealth);
         healthBar.width = (Screen.width / 2) * (curHealth / (float)maxHealth);
         

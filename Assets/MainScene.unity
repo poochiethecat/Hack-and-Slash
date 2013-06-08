@@ -143,6 +143,7 @@ GameObject:
   - 114: {fileID: 341494394}
   - 114: {fileID: 341494393}
   - 114: {fileID: 341494392}
+  - 114: {fileID: 341494399}
   m_Layer: 0
   m_Name: Evil Cubie 3
   m_TagString: Enemy
@@ -162,8 +163,6 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
-  showHealthBar: 0
-  fontStyle: 0
 --- !u!114 &341494393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +238,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &341494399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341494391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ddf2edb8de0f54e87a757c878ac766, type: 3}
+  m_Name: 
 --- !u!1 &472791352
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +365,7 @@ GameObject:
   - 114: {fileID: 899210509}
   - 114: {fileID: 899210510}
   - 114: {fileID: 899210511}
+  - 114: {fileID: 899210512}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -487,8 +497,6 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
-  showHealthBar: 0
-  fontStyle: 0
 --- !u!114 &899210510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +523,16 @@ MonoBehaviour:
   targets: []
   selectedTarget: {fileID: 0}
   defaultColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &899210512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 899210503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ddf2edb8de0f54e87a757c878ac766, type: 3}
+  m_Name: 
 --- !u!1 &1038946075
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +547,7 @@ GameObject:
   - 114: {fileID: 1038946078}
   - 114: {fileID: 1038946077}
   - 114: {fileID: 1038946076}
+  - 114: {fileID: 1038946083}
   m_Layer: 0
   m_Name: Evil Cubie 2
   m_TagString: Enemy
@@ -548,8 +567,6 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
-  showHealthBar: 0
-  fontStyle: 0
 --- !u!114 &1038946077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +642,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1038946083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1038946075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ddf2edb8de0f54e87a757c878ac766, type: 3}
+  m_Name: 
 --- !u!1 &1467619022
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +842,7 @@ GameObject:
   - 114: {fileID: 2137288359}
   - 114: {fileID: 2137288361}
   - 114: {fileID: 2137288360}
+  - 114: {fileID: 2137288362}
   m_Layer: 0
   m_Name: Evil Cubie 1
   m_TagString: Enemy
@@ -896,8 +924,6 @@ MonoBehaviour:
   m_Name: 
   maxHealth: 100
   curHealth: 100
-  showHealthBar: 0
-  fontStyle: 0
 --- !u!114 &2137288361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,3 +937,13 @@ MonoBehaviour:
   target: {fileID: 899210503}
   attackTimer: 0
   coolDown: 0
+--- !u!114 &2137288362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137288354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ddf2edb8de0f54e87a757c878ac766, type: 3}
+  m_Name: 

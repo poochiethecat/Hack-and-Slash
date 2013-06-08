@@ -60,12 +60,12 @@ public class Targeting : MonoBehaviour {
     
     private void SelectTarget(){
         selectedTarget.renderer.material.color = Color.red;
-        ((Health)selectedTarget.GetComponent("Health")).select();
+        ((State)selectedTarget.GetComponent("State")).target();
     }
     
     private void DeselectTarget(){
         selectedTarget.renderer.material.color = defaultColor;
-        ((Health)selectedTarget.GetComponent("Health")).deselect();
+        ((State)selectedTarget.GetComponent("State")).untarget();
         selectedTarget = null;
     }
     

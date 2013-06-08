@@ -12,8 +12,6 @@ public class Health : MonoBehaviour
     public HealthBar healthbar;
     private Transform myTransform;
  
-    
-    private string state = "unselected";
    
 
     // Use this for initialization
@@ -26,27 +24,14 @@ public class Health : MonoBehaviour
         switch (tag) {
         case "Player":
             position[1] = 10;
-            this.state = "visible";
             break;
         case "Enemy":
             position[1] = 60;
             break;
         }
-        healthbar = new HealthBar(position[0], position[1], Screen.width/2);
+        healthbar = new HealthBar(position[0], position[1], Screen.width/2, myTransform);
     }
-    
-    
-    public void select()
-    {
-        this.state = "selected";
-        
-    }
-    
-    public void deselect()
-    {
-        this.state = "unselected";
-        
-    }
+   
  
     
    
@@ -59,13 +44,13 @@ public class Health : MonoBehaviour
 
     void OnGUI ()
     {
-        switch (this.state)
+        switch (((State)myTransform.GetComponent("State")).state)
         {
-        case "selected":
-            healthbar.draw(myTransform.name, curHealth, maxHealth,FontStyle.BoldAndItalic);
+        case StateName.targetted:
+            healthbar.draw(myTransform.name, curHealth, maxHealth);
             break;
-        case "visible":
-            healthbar.draw(myTransform.name, curHealth, maxHealth,FontStyle.Normal);
+        case StateName.visible:
+            healthbar.draw(myTransform.name, curHealth, maxHealth);
             break;
         }
 
