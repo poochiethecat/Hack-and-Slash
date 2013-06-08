@@ -76,7 +76,7 @@ public class Targeting : MonoBehaviour {
     void Update () {
         
         if(Input.GetKeyDown(KeyCode.Tab)) TargetEnemy();
-        if(Input.GetKeyDown(KeyCode.Escape)) DeselectTarget();
+        if (selectedTarget != null && Input.GetKeyDown(KeyCode.Escape)) DeselectTarget();
     
     }
 }

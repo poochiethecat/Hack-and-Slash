@@ -7,6 +7,8 @@ public class State : MonoBehaviour {
     private StateName _screenState;
     private Color _color;
     
+    private Transform myTransform;
+    
     public StateName TargetState {
         get {
             return this._targetState;
@@ -48,6 +50,20 @@ public class State : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (tag == "Player")
+        {
+            
+            MouseLook look = GetComponent<MouseLook>();
+            MouseLook camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>();
+            
+            if (Input.GetKeyDown(KeyCode.Pause))
+            {
+               look.enabled = !look.enabled;
+               camera.enabled = !camera.enabled;
+               Time.timeScale = -Time.timeScale+1;
+                
+            }
+        }
 	
 	}
     
@@ -64,7 +80,7 @@ public class State : MonoBehaviour {
     
     public static State getState(Transform entity)
     {
-        return (State)entity.GetComponent("State");
+        return entity.GetComponent<State>();
     }
     
 

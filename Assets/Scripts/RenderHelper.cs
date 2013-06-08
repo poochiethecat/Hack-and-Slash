@@ -32,14 +32,12 @@ public class RenderHelper : MonoBehaviour {
     void OnBecameVisible()
     {
         
-        Debug.Log("I just became visible: "+myTransform.name);
         State.getState(myTransform).ScreenState = StateName.OnScreen;
         
     }
     
     void OnBecameInvisible()
     {
-        Debug.Log("I just became invisible: "+myTransform.name); 
         State.getState(myTransform).ScreenState = StateName.OffScreen;
     }
 }
