@@ -10,7 +10,7 @@ public abstract class HealthBar : MonoBehaviour
 
     
     // Style of the bar-part of the healthbar
-    public GUIStyle healthBarStyle;
+    protected    GUIStyle healthBarStyle;
     // style for the text
     public GUIStyle textStyleNormal;
     public GUIStyle textStyleTargetted;
@@ -119,7 +119,7 @@ public abstract class HealthBar : MonoBehaviour
             healthBarBoxStyle_inner.stretchWidth = false;
             healthBarBoxStyle_inner.normal.textColor = Color.gray;
 
-//            healthBarStyle = new GUIStyle(GUI.skin.box);
+            healthBarStyle = new GUIStyle(GUI.skin.box);
             healthBarStyle.fixedHeight=0;
             healthBarStyle.fixedWidth = 0;
 
