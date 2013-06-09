@@ -15,7 +15,7 @@ public class PlayerHealthBar : HealthBar
     
     }
     
-    new private void updateRectangles()
+    private void updateRectangles()
     {   
         
         healthBarBox_inner = new Rect(bar.x, bar.y, bar.width, bar.height);
@@ -31,6 +31,7 @@ public class PlayerHealthBar : HealthBar
     
     void OnGUI()
     {
+        updateRectangles();
         base.draw(myTransform.name+": ", myHealth.curHealth, myHealth.maxHealth,drawDescription: true); 
     }
 }

@@ -12,7 +12,8 @@ public abstract class HealthBar : MonoBehaviour
     // Style of the bar-part of the healthbar
     public GUIStyle healthBarStyle;
     // style for the text
-    public GUIStyle healthBarStyleText;
+    public GUIStyle textStyleNormal;
+    public GUIStyle textStyleTargetted;
     // Style for the border/outer box
     protected GUIStyle healthBarBoxStyle_outer = null;
     // Style for the background/inner box
@@ -118,15 +119,22 @@ public abstract class HealthBar : MonoBehaviour
             healthBarBoxStyle_inner.stretchWidth = false;
             healthBarBoxStyle_inner.normal.textColor = Color.gray;
 
-            healthBarStyle = new GUIStyle(GUI.skin.box);
+//            healthBarStyle = new GUIStyle(GUI.skin.box);
             healthBarStyle.fixedHeight=0;
             healthBarStyle.fixedWidth = 0;
 
             healthBarStyle.normal.textColor = Color.black;
 
-            healthBarStyleText = new GUIStyle(healthBarStyle);
-            healthBarStyleText.stretchWidth = false;
-            healthBarStyleText.normal.background = clearTexture;
+//            textStyleNormal = new GUIStyle(healthBarStyle);
+            textStyleNormal.stretchWidth = false;
+            textStyleNormal.normal.background = clearTexture;
+            textStyleNormal.fontStyle = FontStyle.Normal;
+        
+        
+//            textStyleTargetted = new GUIStyle(healthBarStyle);
+            textStyleTargetted.stretchWidth = false;
+            textStyleTargetted.normal.background = clearTexture;
+            textStyleTargetted.fontStyle = FontStyle.BoldAndItalic;
 
     }
     
@@ -135,16 +143,6 @@ public abstract class HealthBar : MonoBehaviour
         healthBarStyle.normal.background = healthTexture(curHealth, maxHealth);
         healthBarBoxStyle_outer.normal.background = borderTexture;
         healthBarBoxStyle_inner.normal.background = backgroundTexture;
-
-        switch(State.getState(myTransform).TargetState)
-        {
-            case StateName.Targetted:
-                healthBarStyleText.fontStyle = FontStyle.BoldAndItalic;
-                break;
-            default:
-                healthBarStyleText.fontStyle = FontStyle.Normal;
-                break;
-        }
     }
     
     
@@ -180,7 +178,13 @@ public abstract class HealthBar : MonoBehaviour
         {
             text = curHealth + "/" + maxHealth;
         }
-        GUI.Box(healthBarBox_inner,text,healthBarStyleText);
+        if (State.getState (myTransform).TargetState == StateName.Targetted)
+        {
+            GUI.Box(healthBarBox_inner,text,textStyleTargetted);
+        } else 
+        {
+            GUI.Box(healthBarBox_inner,text,textStyleNormal);
+        }
     }
 }
 

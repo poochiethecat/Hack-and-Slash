@@ -59,8 +59,7 @@ public class State : MonoBehaviour {
             
             if (Input.GetKeyUp(KeyCode.Pause))
             {
-                foreach (MouseLook look in GameObject.FindObjectsOfType(typeof(MouseLook)))
-                    look.enabled = !look.enabled;
+                
                 
                 //               camera.enabled = !camera.enabled;
                 Time.timeScale = -Time.timeScale+1;
@@ -68,6 +67,9 @@ public class State : MonoBehaviour {
                     Screen.lockCursor = false;
                 else
                     Screen.lockCursor = true;
+                
+                foreach (MouseLook look in GameObject.FindObjectsOfType(typeof(MouseLook)))
+                    look.enabled = Screen.lockCursor;
                 
             }
         }
