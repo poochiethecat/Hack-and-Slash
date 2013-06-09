@@ -1,10 +1,10 @@
 using UnityEngine;
 using System;
-public class HealthBar : MonoBehaviour
+public abstract class HealthBar : MonoBehaviour
 {
-    public int healthBarBaseWidth = 300;
-    public int healthBarMaxVisibleDistance = 100;
-    public int healthBarMinWidth = 50;
+    public int maxWidth = 300;
+    public int maxVisibleDistance = 100;
+    public int minWidth = 50;
     public Rect bar;
     public RectOffset barBorder;
 
@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour
     protected Transform myTransform;
 
     // Rectangle of the healthbar, gets smaller with change in health
-//    private Rect healthBar;
+
     // Rectangle of the max healthbar
     protected Rect healthBarBox_inner;
     // Rectangle for the border, is healthBarBorder pixels bigger in all directions than the inner box
@@ -29,16 +29,28 @@ public class HealthBar : MonoBehaviour
 
 
     // Background Texture, visible if health < 100%
-    protected Texture2D backgroundTexture;
+    protected Texture2D backgroundTexture ;
     // Border Texture, this color takes the border
     protected Texture2D borderTexture;
     // transparent texture for the background of the text
-    protected Texture2D clearTexture;
+    protected Texture2D clearTexture ;
     
     private bool firstrun;
     
     protected Health myHealth;
     
+    public double cutoffPercentage = 0.2; // Below this ratio of health, the bar will be red
+    
+    public float healthPercentage;
+    
+    public Color background = Color.cyan;
+    public Color border = Color.black;
+    
+    public Color fullHealth = Color.green;
+    public Color criticalHealth = Color.red;
+    
+    private LABColor _fullHealth;
+    private LABColor _critHealth;
     
     public void Start()
     {
@@ -65,22 +77,27 @@ public class HealthBar : MonoBehaviour
     // Initializes border and background textures.
     private void initTextures()
     {
-        backgroundTexture = ColoredTexture.generatePixel(Color.cyan);
-        borderTexture = ColoredTexture.generatePixel(Color.black);
+        backgroundTexture = ColoredTexture.generatePixel(background);
+        borderTexture = ColoredTexture.generatePixel(border);
         clearTexture = ColoredTexture.generatePixel(Color.clear);
     }
  
     // Returns a Texture with a color based on the current Health of the entity.
     Texture2D healthTexture(int curHealth, int maxHealth)
     {
+        // Use LAB-Colors to find a linear path between any two colors in the human colorspace.
+        _fullHealth = new LABColor(fullHealth);
+        _critHealth = new LABColor(criticalHealth);
         
-        float healthPercentage = ((float)curHealth)/((float)maxHealth);
+//        float healthPercentage = ((float)curHealth)/((float)maxHealth);
         // Reach 0 a bit faster than standard
-        if (healthPercentage < 0.2)
-            healthPercentage -= 0.1f;
-        if (healthPercentage < 0)
+        if (healthPercentage < cutoffPercentage)
             healthPercentage = 0;
-        return ColoredTexture.generatePixel( r: 1-healthPercentage, g: healthPercentage ,b: 0);
+        double newLightness = _critHealth.l - healthPercentage*(_critHealth.l - _fullHealth.l);
+        double newA = _critHealth.a -healthPercentage*(_critHealth.a - _fullHealth.a);
+        double newB = _critHealth.b - healthPercentage*(_critHealth.b - _fullHealth.b);
+        LABColor targetColor = new LABColor((float)newLightness, (float)newA, (float)newB);
+        return ColoredTexture.generatePixel(targetColor.ToColor());
     }
  
     // Creates the styles we need
@@ -121,67 +138,13 @@ public class HealthBar : MonoBehaviour
     }
     
     
-    protected void updateRectangles()
-    {   
-        
-        RectOffset border = this.barBorder;
-        healthBarBox_inner = new Rect(bar.x, bar.y, bar.width, bar.height);
-        healthBarBox_outer = new Rect(bar.x-border.left, bar.y-border.top, bar.width+border.right+border.left, bar.height+border.bottom+border.top);
-        
-    }
-    
-//    void OnGui()
-//    {
-////        State mystate = State.getState(myTransform);
-//////        if (this.healthbar == null)
-//////        {
-//////            Debug.Log ("Healthbar was null, why?");
-//////            this.healthbar = new HealthBar(myTransform);
-//////        }
-////        // If this entity is on scree, render the healthbar
-////        
-////        if (mystate.ScreenState == StateName.OnScreen)
-////        {
-////            Vector3 screenPos = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().WorldToScreenPoint(myTransform.position);
-////            float DistanceFromPlayer = (GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position - myTransform.position).magnitude;
-////            
-////            
-////            if (DistanceFromPlayer < healthBarMaxVisibleDistance) // Don't draw if we are too far away
-////            { 
-////                
-////                
-////                double ratio_distance = 0.8*healthBarMaxVisibleDistance;
-////                
-////                double ratio = Math.Pow(1-DistanceFromPlayer/ratio_distance,1);
-////                if (ratio < 0 ) ratio = 0;
-////                double currentWidth = Math.Pow(1-DistanceFromPlayer/ratio_distance,3)*healthBarBaseWidth;
-////                float realWidth = (float)currentWidth+healthBarMinWidth;
-////                bar = new Rect(left: screenPos.x-realWidth/2, top: (float)(Screen.height - screenPos.y - ratio*50-20), width: realWidth, height: 20);
-////                
-////                switch (mystate.TargetState) 
-////                {
-////                case StateName.Targetted:
-////                    this.draw(myTransform.name+": ", myHealth.curHealth, myHealth.maxHealth,drawDescription: realWidth > 138,noText: realWidth < 80);
-////                    break;
-////                default:
-////                    this.draw(myTransform.name+": ", myHealth.curHealth, myHealth.maxHealth,drawDescription: realWidth > 138,noText: realWidth < 80);
-////                    break;
-////                }
-////                
-////            }
-////        }
-////        if (myTransform.tag == "Player")
-////        {
-//////            bar = new Rect(0,0,0,0);
-////            this.draw(myTransform.name+": ", myHealth.curHealth, myHealth.maxHealth,drawDescription: true); 
-////        }
-//    }
 
  
     
     
     public void draw(string text, int curHealth, int maxHealth, bool drawDescription = true, bool noText = false)
     {
+        healthPercentage = ((float)curHealth)/((float)maxHealth);
         
         
         if (firstrun)
@@ -190,8 +153,6 @@ public class HealthBar : MonoBehaviour
             firstrun = false;
         }
         updateStyles(curHealth, maxHealth);
-        updateRectangles();
-
 
         bar.width = this.Width * (curHealth / (float)maxHealth);
         

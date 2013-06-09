@@ -18,9 +18,8 @@ public class PlayerHealthBar : HealthBar
     new private void updateRectangles()
     {   
         
-        RectOffset border = this.barBorder;
         healthBarBox_inner = new Rect(bar.x, bar.y, bar.width, bar.height);
-        healthBarBox_outer = new Rect(bar.x-border.left, bar.y-border.top, bar.width+border.right+border.left, bar.height+border.bottom+border.top);
+        healthBarBox_outer = new Rect(bar.x-barBorder.left, bar.y-barBorder.top, bar.width+barBorder.right+barBorder.left, bar.height+barBorder.bottom+barBorder.top);
         
     }
     
