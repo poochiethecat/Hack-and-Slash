@@ -19,13 +19,24 @@ public class CharacterGenerator : MonoBehaviour {
     private const int BUTTON_HEIGHT = LINE_HEIGHT;
     private const int BUTTON_OFFSET = OFFSET / 2;
     
+    private System.Random random = new System.Random();
+    
     private int _statStartingPos = 40;
+    
+    public GUISkin mySkin;
+    
+    public GameObject playerPrefab;
 
     // Use this for initialization
     void Start () {
         
-        _toon = new PlayerCharacter();
-        _toon.Awake();
+        GameObject pc = Instantiate(playerPrefab,Vector3.zero, Quaternion.identity) as GameObject;
+        
+        pc.name = "PC";
+        
+        //_toon = new PlayerCharacter();
+        //_toon.Awake();
+        _toon = pc.GetComponent<PlayerCharacter>();
         
         _pointsLeft = STARTING_POINTS;
         
@@ -41,11 +52,15 @@ public class CharacterGenerator : MonoBehaviour {
     }
     
     void OnGUI(){
+        GUI.skin = mySkin;
         DisplayName();
         DisplayAttributes();
         DisplayVitals();
         DisplaySkills();
         DisplayPointsLeft();
+        
+        if(_pointsLeft > 0 || _toon.Name == "")DisplayCreateLabel();
+        else DisplayCreateButton();
     }
     private void DisplayName(){
         GUI.Label(new Rect(OFFSET,OFFSET,50,LINE_HEIGHT), "Name:");
@@ -121,5 +136,33 @@ public class CharacterGenerator : MonoBehaviour {
     }
     private void DisplayPointsLeft(){
         GUI.Label(new Rect(250, 10, 100, LINE_HEIGHT), "Points Left: " + _pointsLeft);
+        if(GUI.Button(new Rect(350, 10, 100, BUTTON_HEIGHT), "Randomize")){
+            for(; _pointsLeft > 0; _pointsLeft--){
+                int tempAtt = random.Next(0,Enum.GetValues(typeof(AttributeName)).Length);
+                _toon.GetPrimaryAttribute(tempAtt).BaseValue++;
+            }
+        }
     }
+    private void DisplayCreateButton(){
+        if(GUI.Button(new Rect( Screen.width / 2 - 50,
+                            _statStartingPos + ((Enum.GetValues(typeof(AttributeName)).Length + Enum.GetValues(typeof(VitalName)).Length)*LINE_HEIGHT),
+                            STAT_LABEL_WIDTH,
+                            LINE_HEIGHT
+                ), "Create")){
+            GameSettings gameSettings = GameObject.Find("__GameSettings").GetComponent<GameSettings>();
+            //set curVal of Vitals to the max Value
+            _toon.UpdateCurVitalValues();
+            
+            gameSettings.SaveCharacterData();
+            Application.LoadLevel("MainScene");
+        }
+    }
+    private void DisplayCreateLabel(){
+        GUI.Label(new Rect( Screen.width / 2 - 50,
+                            _statStartingPos + ((Enum.GetValues(typeof(AttributeName)).Length + Enum.GetValues(typeof(VitalName)).Length)*LINE_HEIGHT),
+                            STAT_LABEL_WIDTH,
+                            LINE_HEIGHT
+                ), "Create", "Box");
+    }
+
 }

@@ -28,9 +28,22 @@ public class ModifiedStat : BaseStat {
     public void Update(){
         CalculateModValue();
     }
+    public string GetModifyingAttributesString(){
+        string temp = "";
+        foreach(ModifyingAttribute mod in _mods){
+            temp += mod.attribute.StatName + ":" + mod.ratio + ";";
+        }
+        UnityEngine.Debug.Log(temp);
+        return temp;
+    }
 }
 
 public struct ModifyingAttribute {
     public Attribute attribute;
     public float ratio;
+    
+    public ModifyingAttribute(Attribute att, float rat){
+        attribute = att;
+        ratio = rat;
+    }
 }

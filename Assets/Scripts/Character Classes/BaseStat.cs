@@ -3,7 +3,8 @@ using System.Collections;
 
 public class BaseStat
 {
-
+ 
+    private string _statName;
     private int _baseValue;        //The base value of the Stat
     private int _buffValue;        //amount buffs adds to this stat
     private int _expToLevel;       //experience points needed for next level of this stat
@@ -11,6 +12,7 @@ public class BaseStat
     
     public BaseStat ()
     {
+        _statName = string.Empty;
         _baseValue = 0;
         _buffValue = 0;
         _levelModifier = 1.1f;
@@ -20,6 +22,10 @@ public class BaseStat
     
 #region Basic getters and setters
     //Basic getters/setters
+    public string StatName {
+        get{ return _statName; }
+        set{ _statName = value; }
+    }
     public int BaseValue {
         get{ return _baseValue; }
         set{ _baseValue = value; }

@@ -39,17 +39,20 @@ public class BaseCharacter : MonoBehaviour {
     private void SetupPrimaryAttributes(){
         for(int i = 0; i < _primaryAttributes.Length; i++){
             _primaryAttributes[i] = new Attribute();
+            _primaryAttributes[i].StatName = ((AttributeName)i).ToString();
         }
     }
     private void SetupVitals(){
         for(int i = 0; i < _vitals.Length; i++){
             _vitals[i] = new Vital();
+            _vitals[i].StatName = ((VitalName)i).ToString();
         }
         SetupVitalModifiers();
     }
     private void SetupSkills(){
         for(int i = 0; i < _skills.Length; i++){
             _skills[i] = new Skill();
+            _skills[i].StatName = ((SkillName)i).ToString();
         }
         SetupSkillModifiers();
     }
@@ -105,6 +108,11 @@ public class BaseCharacter : MonoBehaviour {
     public void StatUpdate(){
         foreach(Vital vital in _vitals) vital.Update();
         foreach(Skill skill in _skills) skill.Update();
+    }
+    public void UpdateCurVitalValues(){
+        for(int i = 0; i < Enum.GetValues(typeof(VitalName)).Length; i++){
+            _vitals[i].CurVal = _vitals[i].AdjustedBaseValue;
+        }
     }
     
     public void AddExp(uint exp){

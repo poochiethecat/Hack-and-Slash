@@ -67,7 +67,7 @@ public class Targeting : MonoBehaviour {
     
     private void DeselectTarget(){
         selectedTarget.renderer.material.color = defaultColor;
-        Health health = (Health)selectedTarget.GetComponent("Health");
+        Health health = selectedTarget.GetComponent<Health>();
         health.fontStyle = FontStyle.Normal;
         health.showHealthBar = false;
         selectedTarget = null;
@@ -82,7 +82,7 @@ public class Targeting : MonoBehaviour {
     void Update () {
         
         if(Input.GetKeyDown(KeyCode.Tab)) TargetEnemy();
-        if(Input.GetKeyDown(KeyCode.Escape)) DeselectTarget();
+        if(Input.GetKeyDown(KeyCode.Escape) && selectedTarget) DeselectTarget();
     
     }
 }
