@@ -36,7 +36,7 @@ public class State : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        Screen.lockCursor = true;
+        State.unpause ();
         switch (tag) {
             case "Player":
                 TargetState = StateName.Visible;
@@ -58,23 +58,42 @@ public class State : MonoBehaviour {
 //            MouseLook camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>();
             
             if (Input.GetKeyUp(KeyCode.Pause))
-            {
-                
-                
-                //               camera.enabled = !camera.enabled;
-                Time.timeScale = -Time.timeScale+1;
-                if (Time.timeScale == 0)
-                    Screen.lockCursor = false;
-                else
-                    Screen.lockCursor = true;
-                
-                foreach (MouseLook look in GameObject.FindObjectsOfType(typeof(MouseLook)))
-                    look.enabled = Screen.lockCursor;
+            {   
+                State.pauseToggle();
                 
             }
         }
 	
 	}
+    
+    private static void pauseHelper()
+    {
+        if (Time.timeScale == 0)
+            Screen.lockCursor = false;
+        else
+            Screen.lockCursor = true;
+        
+        foreach (MouseLook look in GameObject.FindObjectsOfType(typeof(MouseLook)))
+            look.enabled = Screen.lockCursor;
+    }
+    
+    public static void pauseToggle()
+    {
+        Time.timeScale = -Time.timeScale+1;
+        State.pauseHelper();
+    }
+    
+    public static void pause()
+    {
+        Time.timeScale = 0;
+        State.pauseHelper();
+
+    }
+    public static void unpause()
+    {
+        Time.timeScale = 1;
+        State.pauseHelper();
+    }
     
     public void target(Color color)
     {
