@@ -99,6 +99,13 @@ public abstract class HealthBar : MonoBehaviour
         LABColor targetColor = new LABColor((float)newLightness, (float)newA, (float)newB);
         return ColoredTexture.generatePixel(targetColor.ToColor());
     }
+    
+    private void updateTextures()
+    {
+        backgroundTexture = ColoredTexture.generatePixel(background);
+        borderTexture = ColoredTexture.generatePixel(border);
+    }
+    
  
     // Creates the styles we need
     private void createStyles()
@@ -126,6 +133,9 @@ public abstract class HealthBar : MonoBehaviour
     private void updateStyles(int curHealth, int maxHealth)
     {
         healthBarStyle.normal.background = healthTexture(curHealth, maxHealth);
+        healthBarBoxStyle_outer.normal.background = borderTexture;
+        healthBarBoxStyle_inner.normal.background = backgroundTexture;
+
         switch(State.getState(myTransform).TargetState)
         {
             case StateName.Targetted:
@@ -152,6 +162,7 @@ public abstract class HealthBar : MonoBehaviour
             createStyles();
             firstrun = false;
         }
+        updateTextures();
         updateStyles(curHealth, maxHealth);
 
         bar.width = this.Width * (curHealth / (float)maxHealth);
