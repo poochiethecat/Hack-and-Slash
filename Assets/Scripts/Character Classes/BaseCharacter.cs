@@ -45,11 +45,13 @@ public class BaseCharacter : MonoBehaviour {
         for(int i = 0; i < _vitals.Length; i++){
             _vitals[i] = new Vital();
         }
+        SetupVitalModifiers();
     }
     private void SetupSkills(){
         for(int i = 0; i < _skills.Length; i++){
             _skills[i] = new Skill();
         }
+        SetupSkillModifiers();
     }
     
     public Attribute GetPrimaryAttribute(int index){
@@ -72,7 +74,7 @@ public class BaseCharacter : MonoBehaviour {
     }
     
     private void AddVitalModifier(VitalName vital, AttributeName mod, float ratio){
-        GetSkill((int)vital).AddModifier(new ModifyingAttribute{attribute = GetPrimaryAttribute((int)mod), ratio = ratio});
+        GetVital((int)vital).AddModifier(new ModifyingAttribute{attribute = GetPrimaryAttribute((int)mod), ratio = ratio});
     }
     
     private void SetupSkillModifiers() {

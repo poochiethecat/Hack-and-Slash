@@ -170,13 +170,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 341494391}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9eb2709b3f134025abbb8711a385616, type: 3}
   m_Name: 
   target: {fileID: 899210503}
   attackTimer: 0
-  coolDown: 0
+  coolDown: 1
 --- !u!114 &341494394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7366778f156b64f14afa50a29b87779d, type: 3}
   m_Name: 
   target: {fileID: 899210504}
-  moveSpeed: 0
+  moveSpeed: 1
   rotationSpeed: 2
   maxDistance: 2
 --- !u!23 &341494395
@@ -556,13 +556,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038946075}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9eb2709b3f134025abbb8711a385616, type: 3}
   m_Name: 
   target: {fileID: 899210503}
   attackTimer: 0
-  coolDown: 0
+  coolDown: 1
 --- !u!114 &1038946078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7366778f156b64f14afa50a29b87779d, type: 3}
   m_Name: 
   target: {fileID: 899210504}
-  moveSpeed: 0
+  moveSpeed: 1
   rotationSpeed: 2
   maxDistance: 2
 --- !u!23 &1038946079
@@ -881,7 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7366778f156b64f14afa50a29b87779d, type: 3}
   m_Name: 
   target: {fileID: 899210504}
-  moveSpeed: 0
+  moveSpeed: 1
   rotationSpeed: 2
   maxDistance: 2
 --- !u!114 &2137288360
@@ -904,10 +904,10 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2137288354}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9eb2709b3f134025abbb8711a385616, type: 3}
   m_Name: 
   target: {fileID: 899210503}
   attackTimer: 0
-  coolDown: 0
+  coolDown: 1
