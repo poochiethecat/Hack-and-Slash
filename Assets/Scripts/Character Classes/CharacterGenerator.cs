@@ -154,7 +154,7 @@ public class CharacterGenerator : MonoBehaviour {
             _toon.UpdateCurVitalValues();
             
             gameSettings.SaveCharacterData();
-            Application.LoadLevel("MainScene");
+            Application.LoadLevel(1);
         }
     }
     private void DisplayCreateLabel(){
