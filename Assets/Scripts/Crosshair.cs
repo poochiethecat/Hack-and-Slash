@@ -19,7 +19,6 @@ public class Crosshair : MonoBehaviour {
 	}
     
     void OnGUI(){
-        Debug.Log ("Screen width: " + crosshair);
         GUI.DrawTexture(new Rect(Screen.width /2-crosshairSize/2, Screen.height / 2-crosshairSize/2, crosshairSize, crosshairSize), crosshair);
  
     }

@@ -57,13 +57,17 @@ public class State : MonoBehaviour {
 //            MouseLook look = GetComponent<MouseLook>();
 //            MouseLook camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>();
             
-            if (Input.GetKeyDown(KeyCode.Pause))
+            if (Input.GetKeyUp(KeyCode.Pause))
             {
-               foreach (MouseLook look in GameObject.FindObjectsOfType(typeof(MouseLook)))
+                foreach (MouseLook look in GameObject.FindObjectsOfType(typeof(MouseLook)))
                     look.enabled = !look.enabled;
-               Screen.lockCursor = !Screen.lockCursor;
-//               camera.enabled = !camera.enabled;
-               Time.timeScale = -Time.timeScale+1;
+                
+                //               camera.enabled = !camera.enabled;
+                Time.timeScale = -Time.timeScale+1;
+                if (Time.timeScale == 0)
+                    Screen.lockCursor = false;
+                else
+                    Screen.lockCursor = true;
                 
             }
         }
