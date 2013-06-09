@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Unity Web Player | %UNITY_WEB_NAME%</title>
-		%UNITY_UNITYOBJECT_DEPENDENCIES%
+		<title>Unity Web Player | Hack and Slash</title>
+		<script type='text/javascript' src='jquery.min.js'></script>
 		<script type="text/javascript">
 		<!--
-		var unityObjectUrl = "%UNITY_UNITYOBJECT_URL%";
+		var unityObjectUrl = "UnityObject2.js";
 		if (document.location.protocol == 'https:')
 			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
 		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
@@ -15,10 +15,10 @@
 		<script type="text/javascript">
 		<!--
 			var config = {
-				width: %UNITY_WIDTH%,
-				height: %UNITY_HEIGHT%,
-				params: %UNITY_PLAYER_PARAMS%
-				%UNITY_SET_BASE_DOWNLOAD_URL%
+				width: 960,
+				height: 600,
+				params: { enableDebugging:"0" }
+				
 			};
 			var u = new UnityObject2(config);
 
@@ -56,7 +56,7 @@
 						break;
 					}
 				});
-				u.initPlugin(jQuery("#unityPlayer")[0], "%UNITY_WEB_PATH%");
+				u.initPlugin(jQuery("#unityPlayer")[0], "PoochieBuild.unity3d");
 			});
 		-->
 		</script>
@@ -85,7 +85,7 @@
 		}
 		div.content {
 			margin: auto;
-			width: %UNITY_WIDTH%px;
+			width: 960px;
 		}
 		div.broken,
 		div.missing {
@@ -109,14 +109,14 @@
 		}
 		div#unityPlayer {
 			cursor: default;
-			height: %UNITY_HEIGHT%px;
-			width: %UNITY_WIDTH%px;
+			height: 600px;
+			width: 960px;
 		}
 		-->
 		</style>
 	</head>
 	<body>
-		<p class="header"><span>Unity Web Player | </span>%UNITY_WEB_NAME%</p>%UNITY_BETA_WARNING%
+		<p class="header"><span>Unity Web Player | </span>Hack and Slash</p>
 		<div class="content">
 			<div id="unityPlayer">
 				<div class="missing">
