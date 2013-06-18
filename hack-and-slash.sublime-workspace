@@ -1,0 +1,1637 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"max",
+				"maxWidth"
+			],
+			[
+				"my",
+				"myTransform"
+			],
+			[
+				"Heal",
+				"HealthBar"
+			],
+			[
+				"o",
+				"OnGUI"
+			],
+			[
+				"Vector",
+				"Vector3	x, y, z"
+			],
+			[
+				"cu",
+				"current_index"
+			],
+			[
+				"featuretw",
+				"featuretwo"
+			],
+			[
+				"daytw",
+				"daytwo"
+			],
+			[
+				"dayon",
+				"dayone"
+			],
+			[
+				"Gui",
+				"GuiControl"
+			],
+			[
+				"fea",
+				"featuretwo"
+			],
+			[
+				"day",
+				"daytwo"
+			],
+			[
+				"cur",
+				"current_button"
+			],
+			[
+				"feat",
+				"featuretwo"
+			],
+			[
+				"da",
+				"dayone"
+			],
+			[
+				"grea",
+				"gear_swapper"
+			],
+			[
+				"fu",
+				"full_image"
+			],
+			[
+				"y",
+				"ycoords"
+			],
+			[
+				"typ",
+				"type_of_power"
+			],
+			[
+				"text",
+				"text_name"
+			],
+			[
+				"full",
+				"full_image"
+			],
+			[
+				"original_",
+				"original_file"
+			],
+			[
+				"fun",
+				"function_file"
+			],
+			[
+				"ori",
+				"original_file"
+			],
+			[
+				"new",
+				"new_file"
+			],
+			[
+				"or",
+				"original_file"
+			],
+			[
+				"Test",
+				"TestFunction2"
+			],
+			[
+				"Te",
+				"TestFunction2"
+			],
+			[
+				"has",
+				"has_import"
+			],
+			[
+				"python",
+				"python_functions"
+			],
+			[
+				"generate",
+				"generateCommentLine"
+			],
+			[
+				"random",
+				"randomName"
+			],
+			[
+				"gears",
+				"gear_swapper"
+			],
+			[
+				"ful",
+				"fullpath"
+			],
+			[
+				"hal",
+				"half_image"
+			],
+			[
+				"_",
+				"__New"
+			],
+			[
+				"ret",
+				"returnarray"
+			],
+			[
+				"A",
+				"A_LoopFileName"
+			],
+			[
+				"current",
+				"current_index"
+			],
+			[
+				"curr",
+				"current_index"
+			],
+			[
+				"sele",
+				"selected_preset"
+			],
+			[
+				"select",
+				"selectPreset"
+			],
+			[
+				"level",
+				"level_scrolls"
+			],
+			[
+				"leve",
+				"level_scrolls"
+			],
+			[
+				"ERror",
+				"ErrorLevel"
+			],
+			[
+				"Msg",
+				"MsgBox"
+			],
+			[
+				"Over",
+				"OverviewNotFound"
+			],
+			[
+				"overv",
+				"overview_icon"
+			],
+			[
+				"asset",
+				"asset_coord"
+			],
+			[
+				"Cr",
+				"CrypticWindowClassDX0"
+			],
+			[
+				"If",
+				"IfWinActive"
+			],
+			[
+				"preset",
+				"presetArray"
+			],
+			[
+				"Load",
+				"loadFromString"
+			],
+			[
+				"ensu",
+				"ensureActiveWindow"
+			],
+			[
+				"get",
+				"getCoordinate"
+			],
+			[
+				"start",
+				"start_button_off"
+			],
+			[
+				"fil",
+				"fillAssets"
+			],
+			[
+				"task",
+				"taskCategory"
+			],
+			[
+				"coll",
+				"collectButton"
+			],
+			[
+				"overvi",
+				"overviewButton"
+			],
+			[
+				"searc",
+				"searchField"
+			],
+			[
+				"person",
+				"person_button"
+			],
+			[
+				"ta",
+				"target"
+			],
+			[
+				"overview",
+				"overview_button"
+			],
+			[
+				"person_",
+				"person_button"
+			],
+			[
+				"task_",
+				"task_button"
+			],
+			[
+				"leath",
+				"leathermaking_button"
+			],
+			[
+				"num",
+				"number"
+			],
+			[
+				"OK",
+				"OK_button"
+			],
+			[
+				"con",
+				"config_length"
+			],
+			[
+				"a",
+				"a_index"
+			],
+			[
+				"presetA",
+				"presetArray0"
+			],
+			[
+				"fin",
+				"finalArray"
+			],
+			[
+				"nev",
+				"neverwinter_crafter_new"
+			],
+			[
+				"coord",
+				"coord_names"
+			],
+			[
+				"coo",
+				"coord_names"
+			],
+			[
+				"pers",
+				"person_offset"
+			],
+			[
+				"off",
+				"asset_offset"
+			],
+			[
+				"Reset",
+				"ResetAChoice"
+			],
+			[
+				"reset",
+				"ResetChoice"
+			],
+			[
+				"acti",
+				"EnsureActiveWindow"
+			],
+			[
+				"asse",
+				"asset_offset"
+			],
+			[
+				"offset",
+				"offset_config"
+			],
+			[
+				"per",
+				"person_offset"
+			],
+			[
+				"Clck",
+				"ClickSmooth"
+			],
+			[
+				"as",
+				"asset"
+			],
+			[
+				"todo_",
+				"todo_config"
+			],
+			[
+				"todo",
+				"todo_config"
+			],
+			[
+				"Ini",
+				"IniRead"
+			],
+			[
+				"fir",
+				"firstrun"
+			],
+			[
+				"of",
+				"offset_config"
+			],
+			[
+				"Confi",
+				"ConfigureTaskOffset"
+			],
+			[
+				"de",
+				"default_offset"
+			],
+			[
+				"Conf",
+				"ConfigureTaskOffset"
+			],
+			[
+				"Lo",
+				"LoadConfig"
+			],
+			[
+				"confi",
+				"configuring"
+			],
+			[
+				"default",
+				"default_search"
+			],
+			[
+				"to",
+				"todo"
+			],
+			[
+				"Click",
+				"ClickSmooth"
+			],
+			[
+				"over",
+				"overview_j"
+			],
+			[
+				"overvei",
+				"overview_i"
+			],
+			[
+				"M",
+				"MsgBox"
+			],
+			[
+				"person1",
+				"person1_i"
+			],
+			[
+				"ass",
+				"asset_i"
+			],
+			[
+				"perso",
+				"person_horizontal_offset"
+			],
+			[
+				"lea",
+				"leather_j"
+			],
+			[
+				"task1",
+				"task1_j"
+			],
+			[
+				"Clic",
+				"ClickSmooth"
+			],
+			[
+				"targ",
+				"target_j"
+			],
+			[
+				"targe",
+				"target_i"
+			],
+			[
+				"tempe",
+				"temperature_unit"
+			],
+			[
+				"stop",
+				"stopPropagation"
+			],
+			[
+				"obstac",
+				"obstacle_height"
+			],
+			[
+				"obsta",
+				"obstacle_height"
+			],
+			[
+				"obstacle",
+				"obstacle_height"
+			],
+			[
+				"animate",
+				"animatePath"
+			],
+			[
+				"check",
+				"checkValidity"
+			],
+			[
+				"obst",
+				"obstacle_width"
+			],
+			[
+				"obstacl",
+				"obstacle_height"
+			],
+			[
+				"recwi",
+				"rec_width"
+			],
+			[
+				"remo",
+				"removePath"
+			],
+			[
+				"for",
+				"fori	Range Comprehension (inclusive)"
+			],
+			[
+				"mouse",
+				"mouseStillDown"
+			],
+			[
+				"do",
+				"doSomething"
+			],
+			[
+				"su",
+				"subl_packages_path"
+			],
+			[
+				"file",
+				"file_list"
+			],
+			[
+				"them",
+				"theme_list"
+			],
+			[
+				"gra",
+				"grayDarker"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Assets/Scripts/Health/Health.cs",
+			"settings":
+			{
+				"buffer_size": 1186,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Health/HealthBar.cs",
+			"settings":
+			{
+				"buffer_size": 6491,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Editor/ScaledCurveDrawer.cs",
+			"settings":
+			{
+				"buffer_size": 906,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Editor/HealthBarDrawer.cs",
+			"settings":
+			{
+				"buffer_size": 1476,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js",
+			"settings":
+			{
+				"buffer_size": 23676,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Unity3D Build System/Unity.sublime-build",
+	"command_palette":
+	{
+		"height": 265.0,
+		"selected_items":
+		[
+			[
+				"open",
+				"File: Open In Browser - Testing Server"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"discov",
+				"Package Control: Discover Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"build",
+				"Build: Build"
+			],
+			[
+				"u",
+				"Unity Helper: Search Selection"
+			],
+			[
+				"show",
+				"Scope: Show in Status Bar"
+			],
+			[
+				"stat",
+				"Scope: Show in Status Bar"
+			],
+			[
+				"status",
+				"View: Toggle Status Bar"
+			],
+			[
+				"scop",
+				"Scope: Show in Status Bar"
+			],
+			[
+				"snip",
+				"Snippet: New Function declaration"
+			],
+			[
+				"snippet ",
+				"Snippet: New Function declaration"
+			],
+			[
+				"public",
+				"Gist: Create Public Gist"
+			],
+			[
+				"public ",
+				"Gist: Create Public Gist"
+			],
+			[
+				"select t",
+				"BracketHighlighter: Select Tag Name (closing and opening)"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"select",
+				"BracketHighlighter: Select Bracket Content"
+			],
+			[
+				"Read",
+				"Emmet: Reload Extensions"
+			],
+			[
+				"disco",
+				"Package Control: Discover Packages"
+			],
+			[
+				"compile",
+				"Coffee: Compile File"
+			],
+			[
+				"compil",
+				"Coffee: Compile File"
+			],
+			[
+				"compi",
+				"Coffee: Compile File"
+			],
+			[
+				"swap",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				"coffee",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"comp",
+				"Coffee: Compile File"
+			],
+			[
+				"coff",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"ctags",
+				"CTags: Rebuild Tags"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"packag in",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: In",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 345.0,
+		"history":
+		[
+			"print(view.scope_name(0))",
+			"print(view.scope_name((0,0)))",
+			"print(view.scope_name(new Point))",
+			"print(view.scope_name())",
+			"print(view.scope_name)",
+			"view.syntax",
+			"print(view)",
+			"view",
+			"print(view.syntax_name(view.sel()[0].b))",
+			"if (5 == 5): print(1)",
+			"if (5 == 5 == 5): print(1)",
+			"if (5 == 5 == 5): print(\"ha\")",
+			"if (5 == 5 == 5): print(\"yay\")",
+			"if (5 == 5 == 5): print(\"yay\");",
+			"if (5 == 5 == 5): print(\"yay\")",
+			"if (5 == 5 == 5): print(\"yay\"); else: print(\"noo\")",
+			"if (5 == 5 == 5): print(\"yay\")",
+			"if (5 == 5 == 5): print(\"yay\");",
+			"if (5 == 5 == 5): print \"YAY\";",
+			"if (5 == 5 == 5): print \"YAY\"",
+			"import sys; print (sys.version)",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')",
+			"import urllib,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib.install_opener(urllib.build_opener(urllib.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')",
+			"import urllib,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/EnemyHealthBar.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Editor/ScaledCurveDrawer.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/ScaledCurve.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Editor/HealthBarDrawer.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/Health.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/PlayerHealthBar.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/HealthBar.cs",
+		"/C/Portables Faster/Snake/Assets/Standard Assets/Character Controllers/Sources/Scripts/PlatformInputController.js",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/State.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/WebPlayerTemplates/Default with Links/index.html",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/Unity3D Build System/Unity.sublime-build",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Editor/healthbarDrawProperty.cs",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
+		"/C/Portables Faster/Hack-and-Slash/Assets/WebPlayerTemplates/Default with Links/script.js",
+		"/C/Portables Faster/Hack-and-Slash/Assets/WebPlayerTemplates/Default with Links/style.css",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Portables Faster/Hack-and-Slash/ArchieBuild/UnityObject2.js",
+		"/C/Portables Faster/Hack-and-Slash/ArchieBuild/style.css",
+		"/C/Portables Faster/Hack-and-Slash/ArchieBuild/ArchieBuild.html",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Targeting.cs",
+		"/C/Portables Faster/Hack-and-Slash/ArchieBuild/script.js",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/RenderHelper.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Crosshair.cs",
+		"/C/Portables Faster/Hack-and-Slash/hack-and-slash.sublime-project",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/SideBar.py",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/CHANGELOG",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Default.sublime-keymap",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Default (Windows).sublime-keymap",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Materials/grass2.mat",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/CompleteSharp/CompleteSharp.sublime-settings",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/CompleteSharp/completesharp.py",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/CompleteSharp/Default.sublime-keymap",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/Unity Build System/Unity.sublime-build",
+		"/C/Program Files (x86)/Unity/Editor/Data/Mono/bin/xbuild.bat",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/UnityHelper/UnityHelper.py",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/UnityHelper/README.md",
+		"/C/Assets/Scripts/State.cs",
+		"/C/Program Files (x86)/Unity/MonoSublime/wrapper.ini",
+		"/C/Program Files (x86)/Unity/MonoSublime/README.txt",
+		"/C/Portables Faster/Hack-and-Slash/ArchieBuild/New Text Document.txt",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/neverwinter_gearswapper.ahkp",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/Snippets/newFunction.sublime-snippet",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/Snippets/miniflag.sublime-snippet",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/Snippets/loopparse.sublime-snippet",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/Snippets/guicontrol.sublime-snippet",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/Snippets/foreach.sublime-snippet",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/Snippets/flag.sublime-snippet",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/Snippets/ahk_base.sublime-snippet",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/AutoHotKey.tmLanguage",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/autohotkey.tmlanguage",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/AutoHotKey.tmLanguage_ORIGINAL",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/AutoHotKey/Comments.tmPreferences",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/autohotkey_compiler.py",
+		"/W/Documents/autoHotkeyScripts/autohotkey compiler/autohotkey_compiler.py",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/test.ahkp",
+		"/W/Documents/autoHotkeyScripts/Neverwinter_2/neverwinter_crafter.ahk",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/gear_swapper/gui.ahk",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/Readme.md",
+		"/W/Documents/autoHotkeyScripts/autohotkey compiler/Readme.md",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/Gist.sublime-settings",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/test_python_functions.ahk",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/test.ahk",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/test.txt",
+		"/C/Users/archie/AppData/Local/Temp/tmprej9x_/working/libs/jsbeautifier/unpackers/tests/test-myobfuscate-output.js",
+		"/C/Users/archie/AppData/Local/Temp/tmpe_hg8h/working/libs/jsbeautifier/unpackers/tests/test-myobfuscate-output.js",
+		"/C/Users/archie/AppData/Local/Temp/tmpdrpi1e/working/libs/jsbeautifier/unpackers/tests/testmyobfuscate.py",
+		"/W/Documents/autoHotkeyScripts/switchAudioDevice.ahk",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/neverwinter_crafter.ini",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/neverwinter_crafter_new.ini",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/neverwinter_crafter2.ini",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/filename",
+		"/C/Users/archie/AppData/Roaming/AudioSwitcher.ini",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/neverwinter_crafter.ahk",
+		"/W/LiberKey/MyApps/SublimeText 2/Data/Packages/C++/C.tmLanguage",
+		"/W/LiberKey/MyApps/SublimeText 2/Data/Packages/Rails/Ruby on Rails.tmLanguage",
+		"/W/LiberKey/MyApps/SublimeText 2/Data/Packages/C#/C#.tmLanguage",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/autohotkey.JSON-tmlanguage",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/autohotkey.sublime-syntax",
+		"/C/Program Files (x86)/Steam/resource/styles/steam.styles",
+		"/C/Program Files (x86)/Steam/skins/skins_readme.txt",
+		"/W/Documents/autoHotkeyScripts/Neverwinter/neverwinter.sublime-project",
+		"/W/Documents/Programming/Firefox/test.html",
+		"/W/Documents/Programming/Firefox/addon-run.bat",
+		"/W/Documents/Programming/Firefox/metriciser/data/jquery.min.js",
+		"/W/Documents/Programming/Firefox/metriciser/lib/content_script.js",
+		"/W/Documents/Programming/Firefox/metriciser/data/content_script.js",
+		"/W/Documents/Programming/Firefox/metriciser/package.json",
+		"/W/Documents/Programming/Firefox/metriciser/README.md",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/batch.sublime-build",
+		"/W/Documents/Programming/Firefox/addon-prompt.bat",
+		"/W/Documents/Programming/Firefox/compile.bat",
+		"/W/Documents/Programming/Firefox/metriciser/.gitignore",
+		"/W/Documents/Programming/Firefox/metriciser/data/quantities.js",
+		"/W/Documents/Dropbox/Gibb/Semester 2/133 - Webapplikation realiseren/taschenrechner/rechner.js",
+		"/W/Documents/Programming/Firefox/metriciser/data/prefPanel.js",
+		"/W/Documents/Programming/Firefox/metriciser/lib/main.js",
+		"/W/Documents/Programming/Firefox/metriciser/lib/main.coffee",
+		"/W/Documents/Programming/Firefox/metriciser/data/content_script.coffee",
+		"/W/Documents/Programming/Firefox/metriciser/lib/content_script.coffee",
+		"/W/Documents/Programming/a-mazing-planner/coffee/maze/maze.coffee",
+		"/W/Documents/Programming/a-mazing-planner/haml/index.haml",
+		"/W/Documents/Programming/a-mazing-planner/compile.bat",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/mycoffee.sublime-build",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/haml.sublime-build",
+		"/W/Documents/Programming/a-mazing-planner/coffee/main.coffee",
+		"/W/Documents/Programming/a-mazing-planner/coffee/maze/overlay.coffee",
+		"/W/Documents/Programming/a-mazing-planner/coffee/maze/obstacle.coffee",
+		"/W/Documents/Programming/a-mazing-planner/js/main.js",
+		"/W/Documents/Programming/a-mazing-planner/index.html",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/coffeehaml.sublime-build",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/CoffeeCompile.sublime-settings",
+		"/W/Documents/Programming/a-mazing-planner/coffee/test.coffee",
+		"/W/Documents/Programming/a-mazing-planner/coffee/overlay.coffee",
+		"/W/Documents/Programming/a-mazing-planner/coffee/maze.coffee",
+		"/W/Documents/Programming/a-mazing-planner/coffee/obstacle.coffee",
+		"/W/Documents/Programming/a-mazing-planner/css/mazeplanner.css",
+		"/W/Documents/Programming/a-mazing-planner/index2.html",
+		"/W/Documents/Programming/a-mazing-planner/js/mazeplanner.js",
+		"/W/Documents/Programming/a-mazing-planner/compile.ps1",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/simplecoffee.sublime-build",
+		"/W/Documents/Programming/a-mazing-planner/html/mazeplanner.coffee",
+		"/W/Documents/Programming/a-mazing-planner/html/mazeplanner.js",
+		"/W/Documents/Programming/a-mazing-planner/html/start.coffee"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"",
+			"*.coffee",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"Horizontal",
+			"int",
+			"property",
+			"public",
+			"create",
+			"myTransform",
+			"myHealth",
+			"myTransform",
+			"player",
+			"myTransform",
+			"myHealth",
+			"blcok",
+			"block",
+			"config",
+			"browser",
+			"\\",
+			"ctrl+r",
+			"”",
+			"“",
+			"\\",
+			"map",
+			"for",
+			"if",
+			"function",
+			"Gui",
+			"button",
+			"selectbut",
+			"SelectBut",
+			"E",
+			"f_button",
+			"selectPreset",
+			"preset",
+			"current_button",
+			":= ",
+			"current_button",
+			"featureone",
+			"featuretwo",
+			"right",
+			"left",
+			"daytwo",
+			"475",
+			"f_button",
+			"%path%",
+			"\"gear_swapper/transparent.png\"",
+			"40",
+			"vr_button",
+			"DropDown",
+			"default",
+			"Configuration",
+			"Gui,",
+			"      Gui, Add, Picture, %pic_coords%, %path%\n      Gui, Add, Text, %text_coords% +BackgroundTrans +Left, %text_name%\n",
+			",",
+			"*40",
+			"w100",
+			"55+",
+			"40+",
+			"40",
+			"encounters",
+			"counter",
+			"index",
+			"anon(acc, val, delimiter){\n    return acc . \"blablabal\" .  val\n    }",
+			"647ad23ea636475fb6b917152f139a27",
+			"77bfe3d757344548acff3f7ec58d595a",
+			"6d0f36e98d014fde8de47053365b9dd1",
+			"text",
+			"main_file",
+			"name",
+			"value",
+			"join",
+			"name2",
+			"450",
+			"target",
+			"clicksmooth",
+			"length",
+			"for",
+			"save",
+			"png",
+			":= \"",
+			"png",
+			":= \"",
+			"}\n",
+			"this.test",
+			"this[test]",
+			"MsgBox WHAAT?",
+			"interfaceVisible",
+			"getCoord",
+			"msgbox",
+			"conf.where",
+			"ensureActiveWindow",
+			"presetString",
+			"ensureActiveWindow",
+			"MyException",
+			"Exception",
+			"ensureActiveWindow",
+			"Sleep",
+			"200",
+			"collect",
+			"\"neverwinter_crafter_new2.ini\"",
+			"msgbox",
+			"150",
+			"ensureActiveWindow",
+			"collect",
+			"ImageSearch, posi, posj,0,0,1920,1200,*16",
+			".png",
+			"overviewButton",
+			"ImageSearch",
+			"asset",
+			"conf.where == ",
+			"this.config",
+			"number",
+			"Smooth",
+			"ClickSmooth",
+			"config",
+			"config.search_field",
+			"where",
+			"local",
+			"config",
+			"which_asset",
+			"ClickSmooth",
+			"number",
+			"runonce",
+			"val",
+			"string",
+			"temp_str",
+			"str",
+			"key1",
+			"val2",
+			"key2"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#grid_height\n#grid_width",
+			"#grid_height\n#grid_height"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Assets/Scripts/Health/Health.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/Health/HealthBar.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							],
+							[
+								139,
+								139
+							],
+							[
+								191,
+								191
+							]
+						],
+						"settings":
+						{
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Editor/ScaledCurveDrawer.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 906,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								606,
+								470
+							]
+						],
+						"settings":
+						{
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Assets/Editor/HealthBarDrawer.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								692,
+								692
+							]
+						],
+						"settings":
+						{
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Assets/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2675,
+								2682
+							]
+						],
+						"settings":
+						{
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1839.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 253.0
+	},
+	"project": "hack-and-slash.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				".mat",
+				"Assets\\Materials\\grass2.mat"
+			],
+			[
+				"target",
+				"Hack-and-Slash\\Assets\\Scripts\\Targeting.cs"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"rae",
+				"README.md"
+			],
+			[
+				"css",
+				"html\\mazeplanner.css"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"anyt",
+				"app/assets/javascripts/anytime.js"
+			],
+			[
+				"myja",
+				"app/assets/javascripts/myjavascript.js"
+			],
+			[
+				"orig",
+				"Gemfile.orig"
+			],
+			[
+				"appcon",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"less",
+				"app/assets/stylesheets/bootstrap_and_overrides.css.less"
+			],
+			[
+				"my",
+				"app/assets/stylesheets/my_formtastic_changes.css.scss"
+			],
+			[
+				"apcont",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"ap",
+				"doc/app/ApplicationController.html"
+			],
+			[
+				"i1",
+				"config/i18n-js.yml"
+			],
+			[
+				"18",
+				"config/i18n-js.yml"
+			],
+			[
+				"eny",
+				"config/locales/en.yml"
+			],
+			[
+				"aperb",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"de.y",
+				"config/locales/de.yml"
+			],
+			[
+				"en.yl",
+				"config/locales/en.yml"
+			],
+			[
+				"aplijs",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"sampl",
+				"lib/tasks/sample_data.rake"
+			],
+			[
+				"sample",
+				"lib/tasks/sample_data.rake"
+			],
+			[
+				"forg",
+				"lib/forgery/forgeries/project_forgery.rb"
+			],
+			[
+				"enym",
+				"config/locales/en.yml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"W:\\Documents\\Programming\\Maze Planner\\maze-planner.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 322.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

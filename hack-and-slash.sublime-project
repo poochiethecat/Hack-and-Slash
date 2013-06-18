@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "C:\\Portables Faster\\Hack-and-Slash",
+			"file_exclude_patterns": [ "*.meta", "*.guiskin", "*.unity", "*.anim", "*.physicMaterial", "*.flare", "*.font", "*.mat", "*.csproj", "*.pidb", "*.unityproj", "*.sln", "*.userprefs", "*.jpg","*.png","*.bmp)"],
+            "folder_exclude_patterns": ["obj", "Temp", "ProjectSettings", "Library", "Materials", "Textures", "Standard Assets"]
+		},
+	],
+
+}
