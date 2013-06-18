@@ -3,9 +3,9 @@ using System;
 [System.Serializable]
 public abstract class HealthBar {
 
-    [RangeAttributeWithDefault(50, 500,300)]
+    [RangeAttributeWithDefault(50, 1000,300)]
     public int maxWidth = 300;
-    [RangeAttributeWithDefault(50, 200, 100)]
+    [RangeAttributeWithDefault(5, 200, 100)]
     public int maxVisibleDistance = 100;
     [RangeAttributeWithDefault(1,100,50)]
     public int minWidth = 50;
@@ -101,6 +101,11 @@ public abstract class HealthBar {
         this.initTextures();
 
         this.firstrun = true;
+    }
+
+    public void setHealthAndTransform(Health h, Transform t)
+    {
+       this.init(h,t);
     }
 
 

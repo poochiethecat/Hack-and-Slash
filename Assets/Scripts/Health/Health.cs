@@ -8,11 +8,12 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
     public int curHealth = 100;
 
-    public ScaledCurve curve;
 
 
 
-    public HealthBar healthbar;
+    public PlayerHealthBar playerHealthBar;
+    public EnemyHealthBar enemyHealthBar;
+    private HealthBar healthbar;
     private Transform _transform;
 
 
@@ -24,12 +25,14 @@ public class Health : MonoBehaviour
        switch(_transform.tag)
        {
         case "Player":
-            healthbar = new PlayerHealthBar(healthbar,this, _transform);
+            healthbar = playerHealthBar;
             break;
         default:
-            healthbar = new EnemyHealthBar(healthbar,this, _transform);
+            healthbar = enemyHealthBar;
             break;
        }
+
+       healthbar.setHealthAndTransform(this,_transform);
 
     }
 

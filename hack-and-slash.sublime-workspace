@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"inti",
+				"initTextures"
+			],
+			[
+				"pla",
+				"playerhealthbar"
+			],
+			[
+				"min",
+				"minWidth"
+			],
+			[
+				"back",
+				"backgroundTexture"
+			],
+			[
+				"Tex",
+				"Texture2D"
+			],
+			[
+				"m",
+				"min"
+			],
+			[
+				"int",
+				"intValue"
+			],
+			[
+				"PlayerH",
+				"PlayerHealthBar"
+			],
+			[
+				"label",
+				"labelRect"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"Pr",
+				"PrefixLabel"
+			],
+			[
+				"v",
+				"value"
+			],
+			[
+				"d",
+				"description"
+			],
+			[
 				"max",
 				"maxWidth"
 			],
@@ -462,58 +514,6 @@
 			[
 				"obstacle",
 				"obstacle_height"
-			],
-			[
-				"animate",
-				"animatePath"
-			],
-			[
-				"check",
-				"checkValidity"
-			],
-			[
-				"obst",
-				"obstacle_width"
-			],
-			[
-				"obstacl",
-				"obstacle_height"
-			],
-			[
-				"recwi",
-				"rec_width"
-			],
-			[
-				"remo",
-				"removePath"
-			],
-			[
-				"for",
-				"fori	Range Comprehension (inclusive)"
-			],
-			[
-				"mouse",
-				"mouseStillDown"
-			],
-			[
-				"do",
-				"doSomething"
-			],
-			[
-				"su",
-				"subl_packages_path"
-			],
-			[
-				"file",
-				"file_list"
-			],
-			[
-				"them",
-				"theme_list"
-			],
-			[
-				"gra",
-				"grayDarker"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "Assets/Scripts/Health/Health.cs",
 			"settings":
 			{
-				"buffer_size": 1186,
+				"buffer_size": 1230,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,31 +531,47 @@
 			"file": "Assets/Scripts/Health/HealthBar.cs",
 			"settings":
 			{
-				"buffer_size": 6491,
+				"buffer_size": 7152,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Assets/Editor/ScaledCurveDrawer.cs",
+			"file": "Assets/Scripts/Health/PlayerHealthBar.cs",
 			"settings":
 			{
-				"buffer_size": 906,
+				"buffer_size": 905,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Assets/Editor/HealthBarDrawer.cs",
+			"file": "Assets/Scripts/Health/EnemyHealthBar.cs",
 			"settings":
 			{
-				"buffer_size": 1476,
+				"buffer_size": 2688,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Assets/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js",
+			"file": "Assets/Editor/DescriptionAttributeDrawer.cs",
 			"settings":
 			{
-				"buffer_size": 23676,
+				"buffer_size": 935,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Health/ColorTextureAttribute.cs",
+			"settings":
+			{
+				"buffer_size": 302,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Health/DescriptionAttribute.cs",
+			"settings":
+			{
+				"buffer_size": 403,
 				"line_ending": "Windows"
 			}
 		}
@@ -563,9 +579,21 @@
 	"build_system": "Packages/Unity3D Build System/Unity.sublime-build",
 	"command_palette":
 	{
-		"height": 265.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"snip get",
+				"Snippet: getpropertyheight"
+			],
+			[
+				"snippet get",
+				"Snippet: getpropertyheight"
+			],
+			[
+				"snippet propertyH",
+				"Snippet: getpropertyheight"
+			],
 			[
 				"open",
 				"File: Open In Browser - Testing Server"
@@ -727,7 +755,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 464.0
+		"width": 600.0
 	},
 	"console":
 	{
@@ -772,13 +800,22 @@
 	},
 	"file_history":
 	[
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/unity/getpropertyheight.sublime-snippet",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/PlayerAttack.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/ColorTextureAttribute.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/RangeAttributeWithDefault.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Editor/RangeAttributeWithDefaultDrawer.cs",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/EnemyHealthBar.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Editor/ScriptIntAttributeDrawer.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/HealthBar.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/ScriptIntAttribute.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Editor/Drawing.cs",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Editor/ScaledCurveDrawer.cs",
-		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/ScaledCurve.cs",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Editor/HealthBarDrawer.cs",
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/ScaledCurve.cs",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/Health.cs",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/PlayerHealthBar.cs",
-		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/HealthBar.cs",
 		"/C/Portables Faster/Snake/Assets/Standard Assets/Character Controllers/Sources/Scripts/PlatformInputController.js",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/State.cs",
 		"/C/Portables Faster/Hack-and-Slash/Assets/WebPlayerTemplates/Default with Links/index.html",
@@ -890,16 +927,7 @@
 		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/CoffeeCompile.sublime-settings",
 		"/W/Documents/Programming/a-mazing-planner/coffee/test.coffee",
 		"/W/Documents/Programming/a-mazing-planner/coffee/overlay.coffee",
-		"/W/Documents/Programming/a-mazing-planner/coffee/maze.coffee",
-		"/W/Documents/Programming/a-mazing-planner/coffee/obstacle.coffee",
-		"/W/Documents/Programming/a-mazing-planner/css/mazeplanner.css",
-		"/W/Documents/Programming/a-mazing-planner/index2.html",
-		"/W/Documents/Programming/a-mazing-planner/js/mazeplanner.js",
-		"/W/Documents/Programming/a-mazing-planner/compile.ps1",
-		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/simplecoffee.sublime-build",
-		"/W/Documents/Programming/a-mazing-planner/html/mazeplanner.coffee",
-		"/W/Documents/Programming/a-mazing-planner/html/mazeplanner.js",
-		"/W/Documents/Programming/a-mazing-planner/html/start.coffee"
+		"/W/Documents/Programming/a-mazing-planner/coffee/maze.coffee"
 	],
 	"find":
 	{
@@ -920,6 +948,21 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"offset",
+			"description",
+			"ColorTextureAttribute",
+			"maxVisible",
+			"initGUI",
+			"ColoredTexture",
+			"!",
+			"default",
+			"bar",
+			"Debug.Log",
+			"topRect",
+			"1.5f",
+			"//public",
+			"public",
+			"protected",
 			"Horizontal",
 			"int",
 			"property",
@@ -1032,22 +1075,7 @@
 			"number",
 			"Smooth",
 			"ClickSmooth",
-			"config",
-			"config.search_field",
-			"where",
-			"local",
-			"config",
-			"which_asset",
-			"ClickSmooth",
-			"number",
-			"runonce",
-			"val",
-			"string",
-			"temp_str",
-			"str",
-			"key1",
-			"val2",
-			"key2"
+			"config"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1076,29 +1104,45 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1186,
+						"buffer_size": 1230,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								590,
+								590
 							]
 						],
 						"settings":
 						{
 							"bh_regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1107,10 +1151,6 @@
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1118,19 +1158,7 @@
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
+								"bh_double_quote_close"
 							],
 							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"tab_size": 2,
@@ -1148,137 +1176,57 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6491,
+						"buffer_size": 7152,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								106,
-								106
-							],
-							[
-								139,
-								139
-							],
-							[
-								191,
-								191
+								2931,
+								2952
 							]
 						],
 						"settings":
 						{
 							"bh_regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
-							],
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Assets/Editor/ScaledCurveDrawer.cs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 906,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								606,
-								470
-							]
-						],
-						"settings":
-						{
-							"bh_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -1289,40 +1237,56 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1170.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "Assets/Editor/HealthBarDrawer.cs",
+					"buffer": 2,
+					"file": "Assets/Scripts/Health/PlayerHealthBar.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1476,
+						"buffer_size": 905,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								692,
-								692
+								401,
+								401
 							]
 						],
 						"settings":
 						{
 							"bh_regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1331,10 +1295,6 @@
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1342,11 +1302,41 @@
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
+								"bh_double_quote_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Assets/Scripts/Health/EnemyHealthBar.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								368,
+								368
+							]
+						],
+						"settings":
+						{
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -1354,7 +1344,35 @@
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
-								"bh_unmatched_close"
+								"bh_unmatched_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
 							],
 							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"tab_size": 4,
@@ -1368,37 +1386,45 @@
 				},
 				{
 					"buffer": 4,
-					"file": "Assets/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js",
+					"file": "Assets/Editor/DescriptionAttributeDrawer.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23676,
+						"buffer_size": 935,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2675,
-								2682
+								261,
+								261
 							]
 						],
 						"settings":
 						{
 							"bh_regions":
 							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -1411,29 +1437,161 @@
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close"
 							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1839.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Assets/Scripts/Health/ColorTextureAttribute.cs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Assets/Scripts/Health/DescriptionAttribute.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								353,
+								353
+							]
+						],
+						"settings":
+						{
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1443,7 +1601,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1479,7 +1637,7 @@
 	"project": "hack-and-slash.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1629,7 +1787,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 322.0,
+	"side_bar_width": 175.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
