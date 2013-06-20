@@ -10,7 +10,8 @@ public abstract class HealthBar {
     [RangeAttributeWithDefault(1,100,50)]
     public int minWidth = 50;
 
-    public Rect bar;
+    public Rect healthBox;
+    private Rect drawing_bar;
     public RectOffset barBorder;
 
 
@@ -30,16 +31,14 @@ public abstract class HealthBar {
     private Color _lastBorder = Color.black;
 
     public Color fullHealth = Color.green;
-    private Color _lastFullHealth = Color.green;
     public Color criticalHealth = Color.red;
-    private Color _lastFriticalHealth = Color.red;
 
 
 
     // Style for the border/outer box
-    protected GUIStyle healthBarBoxStyle_outer = null;
+    protected GUIStyle borderStyle;
     // Style for the background/inner box
-    protected GUIStyle healthBarBoxStyle_inner = null;
+    protected GUIStyle backgroundStyle;
 
 
 
@@ -48,9 +47,9 @@ public abstract class HealthBar {
     // Rectangle of the healthbar, gets smaller with change in health
 
     // Rectangle of the max healthbar
-    protected Rect healthBarBox_inner;
+    protected Rect backgroundBox;
     // Rectangle for the border, is healthBarBorder pixels bigger in all directions than the inner box
-    protected Rect healthBarBox_outer;
+    protected Rect borderBox;
 
 
     // Background Texture, visible if health < 100%
@@ -60,6 +59,13 @@ public abstract class HealthBar {
     // transparent texture for the background of the text
     protected Texture2D clearTexture ;
 
+
+    private Texture2D _lastHealthTexture;
+
+
+
+    private float _lastHealth;
+
     private bool firstrun;
 
 
@@ -67,19 +73,40 @@ public abstract class HealthBar {
     private LABColor _critHealth;
 
 
-    private float healthPercentage;
+    private float _healthPercentage;
 
 
     private Func<float> maxHealth;
     private Func<float> currentHealth;
 
 
-    public float Width {
+    private float CurrentHealth {
         get {
-            if (bar.width <= 0)
-                return Screen.width/2;
-            else
-                return this.bar.width;
+            float health = currentHealth();
+            if (this._lastHealth != health)
+            {
+                this._lastHealth = health;
+                this._lastHealthTexture = this.healthTexture();
+            }
+            return _lastHealth;
+        }
+    }
+    private float MaximumHealth {
+        get {
+            return maxHealth();
+        }
+    }
+
+    private bool Configured {
+        get {
+            return this.isConfigured();
+        }
+    }
+
+    private float HealthPercentage {
+        get {
+            this._healthPercentage = this.CurrentHealth/this.MaximumHealth;
+            return this._healthPercentage;
         }
     }
 
@@ -104,7 +131,6 @@ public abstract class HealthBar {
 
 
 
-
     public abstract void OnGUI();
 
     /// <summary>
@@ -118,14 +144,9 @@ public abstract class HealthBar {
         this.maxHealth = maxHealth;
         this.currentHealth = currentHealth;
         this._transform = transform;
+        this.firstrun = true;
     }
 
-
-
-
-
-
-    // Initializes border and background textures.
     private void initTextures()
     {
         this.backgroundTexture = ColoredTexture.generatePixel(this.background);
@@ -133,19 +154,24 @@ public abstract class HealthBar {
         this.clearTexture = ColoredTexture.generatePixel(Color.clear);
     }
 
+
+
     // Returns a Texture with a color based on the current Health of the entity.
     Texture2D healthTexture()
     {
+
         // Use LAB-Colors to find a linear path between any two colors in the human colorspace.
         this._fullHealth = new LABColor(fullHealth);
         this._critHealth = new LABColor(criticalHealth);
 
+        float healthPercentage = this.HealthPercentage;
+
         // Reach 0 a bit faster than standard
-        if (this.healthPercentage < cutoffPercentage)
-            this.healthPercentage = 0;
-        double newLightness = _critHealth.l - healthPercentage*(_critHealth.l - _fullHealth.l);
-        double newA = _critHealth.a -healthPercentage*(_critHealth.a - _fullHealth.a);
-        double newB = _critHealth.b - healthPercentage*(_critHealth.b - _fullHealth.b);
+        if (healthPercentage < cutoffPercentage)
+            healthPercentage = 0;
+        double newLightness = this._critHealth.l - healthPercentage*(this._critHealth.l - this._fullHealth.l);
+        double newA = this._critHealth.a -healthPercentage*(this._critHealth.a - this._fullHealth.a);
+        double newB = this._critHealth.b - healthPercentage*(this._critHealth.b - this._fullHealth.b);
         LABColor targetColor = new LABColor((float)newLightness, (float)newA, (float)newB);
         return ColoredTexture.generatePixel(targetColor.ToColor());
     }
@@ -173,38 +199,38 @@ public abstract class HealthBar {
     // Creates the styles we need
     private void createStyles()
     {
-            this.healthBarBoxStyle_inner = new GUIStyle();
-            this.healthBarBoxStyle_outer = new GUIStyle();
-            this.healthBarBoxStyle_outer.normal.background = this.borderTexture;
-            this.healthBarBoxStyle_inner.normal.background = this.backgroundTexture;
-            this.healthBarBoxStyle_outer.stretchWidth = false;
-            this.healthBarBoxStyle_inner.stretchWidth = false;
-            this.healthBarBoxStyle_inner.normal.textColor = Color.gray;
+        this.backgroundStyle = new GUIStyle();
+        this.backgroundStyle.normal.background = this.backgroundTexture;
+        this.backgroundStyle.stretchWidth = false;
+        this.backgroundStyle.normal.textColor = Color.gray;
 
-            this.healthBarStyle = new GUIStyle(GUI.skin.box);
-            this.healthBarStyle.fixedHeight=0;
-            this.healthBarStyle.fixedWidth = 0;
+        this.borderStyle = new GUIStyle();
+        this.borderStyle.normal.background = this.borderTexture;
+        this.borderStyle.stretchWidth = false;
 
-            this.healthBarStyle.normal.textColor = Color.black;
+        this.healthBarStyle = new GUIStyle(GUI.skin.box);
+        this.healthBarStyle.fixedHeight=0;
+        this.healthBarStyle.fixedWidth = 0;
 
-            this.textStyleNormal = new GUIStyle(this.healthBarStyle);
-            this.textStyleNormal.stretchWidth = false;
-            this.textStyleNormal.normal.background = this.clearTexture;
-            this.textStyleNormal.fontStyle = FontStyle.Normal;
+        this.healthBarStyle.normal.textColor = Color.black;
 
-            this.textStyleTargetted = new GUIStyle(this.healthBarStyle);
-            this.textStyleTargetted.stretchWidth = false;
-            this.textStyleTargetted.normal.background = this.clearTexture;
-            this.textStyleTargetted.fontStyle = FontStyle.BoldAndItalic;
+        this.textStyleNormal = new GUIStyle(this.healthBarStyle);
+        this.textStyleNormal.stretchWidth = false;
+        this.textStyleNormal.normal.background = this.clearTexture;
+        this.textStyleNormal.fontStyle = FontStyle.Normal;
+
+        this.textStyleTargetted = new GUIStyle(this.healthBarStyle);
+        this.textStyleTargetted.stretchWidth = false;
+        this.textStyleTargetted.normal.background = this.clearTexture;
+        this.textStyleTargetted.fontStyle = FontStyle.BoldAndItalic;
 
     }
 
     private void updateStyles()
     {
-        this.updateStyles();
-        this.healthBarStyle.normal.background = this.healthTexture();
-        this.healthBarBoxStyle_outer.normal.background = this.borderTexture;
-        this.healthBarBoxStyle_inner.normal.background = this.backgroundTexture;
+        this.healthBarStyle.normal.background = this._lastHealthTexture;
+        this.borderStyle.normal.background = this.borderTexture;
+        this.backgroundStyle.normal.background = this.backgroundTexture;
     }
 
 
@@ -213,7 +239,8 @@ public abstract class HealthBar {
     {
         if (this.firstrun)
         {
-            createStyles();
+            this.initTextures();
+            this.createStyles();
             this.firstrun = false;
 
         }
@@ -229,21 +256,20 @@ public abstract class HealthBar {
     /// <param name="noText">Boolean(false)Should any text be drawn</param>
     public void draw(string text, bool drawDescription = true, bool noText = false)
     {
-        if (this.isConfigured())
+        if (this.Configured)
         {
-            this.healthPercentage = this.currentHealth()/this.maxHealth();
-
-
+            this.initGUI();
+            this.healthBox.width  = this.backgroundBox.width*this.HealthPercentage;
             this.updateStyles();
 
-            this.bar.width = this.Width * this.currentHealth() / this.maxHealth();
 
-            GUI.Box(this.healthBarBox_outer,"",this.healthBarBoxStyle_outer);
-            GUI.Box(this.healthBarBox_inner,"",this.healthBarBoxStyle_inner);
-            GUI.Box(this.bar,"", this.healthBarStyle);
+
+            GUI.Box(this.borderBox,"",this.borderStyle);
+            GUI.Box(this.backgroundBox,"",this.backgroundStyle);
+            GUI.Box(this.healthBox,"", this.healthBarStyle);
             if (drawDescription)
             {
-                text = text + this.currentHealth() + "/" + this.maxHealth();
+                text = text + this.CurrentHealth + "/" + this.MaximumHealth;
             } else if (noText)
             {
                 text = "";
@@ -253,10 +279,10 @@ public abstract class HealthBar {
             }
             if (State.getState (this._transform).TargetState == StateName.Targetted)
             {
-                GUI.Box(this.healthBarBox_inner,text,this.textStyleTargetted);
+                GUI.Box(this.backgroundBox,text,this.textStyleTargetted);
             } else
             {
-                GUI.Box(this.healthBarBox_inner,text,this.textStyleNormal);
+                GUI.Box(this.backgroundBox,text,this.textStyleNormal);
             }
         }
 
