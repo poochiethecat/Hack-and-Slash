@@ -15,9 +15,9 @@ public class EnemyHealthBar : HealthBar
     public float noDescriptionLimit = 140;
 
 
-    public EnemyHealthBar(Health health, Transform entity) : base(health,entity) { }
+    // public EnemyHealthBar(Health health, Transform entity) : base(health,entity) { }
 
-    public EnemyHealthBar(HealthBar bar, Health health, Transform entity) : base(bar,health, entity){}
+    // public EnemyHealthBar(HealthBar bar, Health health, Transform entity) : base(bar,health, entity){}
 
 
 

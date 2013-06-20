@@ -33,6 +33,7 @@ public class Health : MonoBehaviour
        }
 
        healthbar.setHealthAndTransform(this,_transform);
+       healthbar.configure(transform: transform, currentHealth: ()=>100, maxHealth: () =>  100);
 
     }
 

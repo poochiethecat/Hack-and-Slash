@@ -4,6 +4,11 @@ using System.Collections;
 public class PlayerHealthBar : HealthBar
 {
     //TODO: Create a constructor from an existing healthbar
+
+    // public PlayerHealthBar(Transform transform,, Func<float> maxHealth, Func<float> currentHealth) : base(transform: transform, currentHealth: ()=>100, maxHealth: () =>  100)
+    // {
+
+    // }
     public PlayerHealthBar(Health health, Transform entity) : base(health,entity)
     {
     }
