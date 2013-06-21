@@ -20,8 +20,7 @@ public abstract class HealthBar {
     public RectOffset barBorder;
 
 
-    // Style of the bar-part of the healthbar
-    protected    GUIStyle healthBarStyle;
+
     // style for the text
 
     // TODO: Create protected delegate for these so that they can be configured only in the subclasses that need them.
@@ -31,13 +30,24 @@ public abstract class HealthBar {
     public double cutoffPercentage = 0.2; // Below this ratio of health, the bar will be red
 
 
-
-    public Color background = Color.cyan;
-    public Color border = Color.black;
     ///<summary>
-    /// The colors chosen in the unity GUI, do not use these directly.
+    /// The color chosen in the unity GUI, used for the background
+    ///</summary>
+    public Color background = Color.cyan;
+
+    ///<summary>
+    /// The color chosen in the unity GUI, used for the broder
+    ///</summary>
+    public Color border = Color.black;
+
+    ///<summary>
+    /// The color chosen in the unity GUI, used for the full Health
     ///</summary>
     public Color fullHealth = Color.green;
+
+    ///<summary>
+    /// The color chosen in the unity GUI, used for the critical Health
+    ///</summary>
     public Color criticalHealth = Color.red;
 
 
@@ -69,7 +79,8 @@ public abstract class HealthBar {
     // transparent texture for the background of the text
     protected Texture2D clearTexture ;
 
-
+    // Style of the bar-part of the healthbar
+    protected    GUIStyle healthBarStyle;
 
     /*
     * Private Variables, used for saving the state of colors.
@@ -91,33 +102,75 @@ public abstract class HealthBar {
     * Getters for computed variables
     */
 
-    protected float CurrentHealth {
+    protected float CurrentHealth
+    {
         get {
             float health = currentHealth();
             if (this._lastHealth != health)
             {
                 this._lastHealth = health;
-                updateTextures(true);
             }
             return _lastHealth;
         }
     }
-    protected float MaximumHealth {
+    protected float MaximumHealth
+    {
         get {
             return maxHealth();
         }
     }
 
-    protected float HealthPercentage {
+    protected float HealthPercentage
+    {
         get {
             this._healthPercentage = this.CurrentHealth/this.MaximumHealth;
             return this._healthPercentage;
         }
     }
 
-    protected bool Configured {
+    protected bool Configured
+    {
         get {
             return this.isConfigured();
+        }
+    }
+
+    protected Color FullHealth
+    {
+        get {
+            return getGUIColor("fullHealth");
+
+        }
+
+    }
+    protected Color CriticalHealth
+    {
+        get {
+            return getGUIColor("criticalHealth");
+        }
+
+    }
+    protected Texture2D BorderTexture
+    {
+        get {
+            if (this.borderTexture == null || !this.colorsEqual(this.border, this._lastBackground))
+            {
+                this._lastBorder = this.border;
+                this.borderTexture = ColoredTexture.generatePixel(this._lastBorder);
+            }
+            return this.borderTexture;
+        }
+    }
+
+    protected Texture2D BackgroundTexture
+    {
+        get {
+        if (this.backgroundTexture == null || !this.colorsEqual(this.background, this._lastBackground))
+        {
+            this._lastBackground = this.background;
+            this.backgroundTexture = ColoredTexture.generatePixel(this._lastBackground);
+        }
+            return this.backgroundTexture;
         }
     }
 
@@ -237,7 +290,7 @@ public abstract class HealthBar {
     /*
     * Helper Functions
     */
-    private Boolean isConfigured()
+    private bool isConfigured()
     {
         bool m =  this.maxHealth == null;
         bool c =  this.currentHealth == null;
@@ -255,25 +308,62 @@ public abstract class HealthBar {
         return !m && !c && !t;
     }
 
-    private bool colorsEqual(Color a, Color b)
+    private bool healthChanged()
     {
-        bool cr = Mathf.Approximately(a.r, b.r);
-        bool cg = Mathf.Approximately(a.g, b.g);
-        bool cb = Mathf.Approximately(a.b, b.b);
-        bool ca = Mathf.Approximately(a.a, b.a);
-        bool complete = cr && cg && cb && ca;
-        bool direct = Mathf.Approximately(a.r, b.r) && Mathf.Approximately(a.g, b.g) && Mathf.Approximately(a.b, b.g) && Mathf.Approximately(a.a,b.a);
-        return direct;
-        //return
+        return this._lastHealth != currentHealth();
+    }
+
+    private bool healthColorChanged()
+    {
+        return !this.colorsEqual(this.criticalHealth,this._lastCriticalHealth) || !this.colorsEqual(this.fullHealth,this._lastFullHealth);
+    }
+
+    private bool approx(float a, float b, float tolerance = 0.0002f)
+    {
+        return Mathf.Abs(a - b) < tolerance;
+    }
+
+
+    private Color getGUIColor(String which)
+    {
+        Color returnvalue = Color.red;
+        switch (which)
+        {
+            case "fullHealth":
+                if (!this.colorsEqual(this.fullHealth,this._lastFullHealth))
+                    this._lastFullHealth = this.fullHealth;
+                returnvalue =  this._lastFullHealth;
+                break;
+            case "criticalHealth":
+                if (!this.colorsEqual(this.criticalHealth,this._lastCriticalHealth))
+                    this._lastCriticalHealth = this.criticalHealth;
+                returnvalue = this._lastCriticalHealth;
+                break;
+        }
+        return returnvalue;
+    }
+
+    protected Texture2D HealthTexture
+    {
+        get {
+            if (healthChanged() || healthColorChanged())
+                this._lastHealthTexture = this.generateHealthTexture();
+            return this._lastHealthTexture;
+        }
+    }
+
+    private bool colorsEqual(Color a, Color b, bool debug = false)
+    {
+        return Mathf.Approximately(a.r, b.r) && Mathf.Approximately(a.g, b.g) && Mathf.Approximately(a.b, b.g) && Mathf.Approximately(a.a,b.a);
     }
 
     // Returns a 1x1 Texture with a color based on the current Health of the entity.
-    Texture2D healthTexture()
+    Texture2D generateHealthTexture()
     {
 
         // Use LAB-Colors to find a linear path between any two colors in the human colorspace.
-        LABColor _fullHealth = new LABColor(this._lastFullHealth);
-        LABColor _critHealth = new LABColor(this._lastCriticalHealth);
+        LABColor _fullHealth = new LABColor(this.FullHealth);
+        LABColor _critHealth = new LABColor(this.CriticalHealth);
 
         float healthPercentage = this.HealthPercentage;
 
@@ -285,7 +375,6 @@ public abstract class HealthBar {
         double newA = _critHealth.a -healthPercentage*(_critHealth.a - _fullHealth.a);
         double newB = _critHealth.b - healthPercentage*(_critHealth.b - _fullHealth.b);
         LABColor targetColor = new LABColor((float)newLightness, (float)newA, (float)newB);
-        // Debug.Log(targetColor.ToColor());
         return ColoredTexture.generatePixel(targetColor.ToColor());
     }
 
@@ -295,78 +384,22 @@ public abstract class HealthBar {
 
     private void update()
     {
-        this.updateTextures();
         this.updateStyles();
     }
 
     private void updateStyles()
     {
-        this.healthBarStyle.normal.background = this._lastHealthTexture;
-        this.borderStyle.normal.background = this.borderTexture;
-        this.backgroundStyle.normal.background = this.backgroundTexture;
-    }
-
-    protected Color FullHealth
-    {
-        get {
-            return getGUIColor("fullHealth");
-
-        }
-
-    }
-    protected Color CriticalHealth
-    {
-        get {
-            return getGUIColor("criticalHealth");
-        }
-
+        this.healthBarStyle.normal.background = this.HealthTexture;
+        this.borderStyle.normal.background = this.BorderTexture;
+        this.backgroundStyle.normal.background = this.BackgroundTexture;
     }
 
 
-    private Color getGUIColor(String which)
-    {
-        bool criticalHealthEqual = this.colorsEqual(this.criticalHealth,this._lastCriticalHealth);
-        bool fullHealthEqual = this.colorsEqual(this.fullHealth,this._lastFullHealth);
-        Color returnvalue = Color.red;
-        switch (which)
-        {
-            case "fullHealth":
-                if (!fullHealthEqual || this._lastHealthTexture == null)
-                    this._lastFullHealth = this.fullHealth;
-                returnvalue =  this._lastFullHealth;
-                break;
-            case "criticalHealth":
-                if (!criticalHealthEqual || this._lastHealthTexture == null)
-                    this._lastCriticalHealth = this.criticalHealth;
-                returnvalue = this._lastCriticalHealth
-                break;
-        }
-        if (forceHealth || !fullHealthEqual || !criticalHealthEqual)
-            this._lastHealthTexture = this.healthTexture();
-        return Color.red;
-    }
 
 
-    private void updateTextures()//bool forceHealth = false)
-    {
-        if (this.backgroundTexture == null || !this.colorsEqual(this.background, this._lastBackground))
-        {
-            this._lastBackground = this.background;
-            this.backgroundTexture = ColoredTexture.generatePixel(this._lastBackground);
-        }
-        if (this.borderTexture == null || !this.colorsEqual(this.border, this._lastBackground))
-        {
-            this._lastBorder = this.border;
-            this.borderTexture = ColoredTexture.generatePixel(this._lastBorder);
-        }
-        // bool criticalHealthEqual = this.colorsEqual(this.criticalHealth,this._lastCriticalHealth);
-        // bool fullHealthEqual = this.colorsEqual(this.fullHealth,this._lastFullHealth);
-        // if (!fullHealthEqual || this._lastHealthTexture == null)
-        //     this._lastFullHealth = this.fullHealth;
-        // if (!criticalHealthEqual || this._lastHealthTexture == null)
-        //     this._lastCriticalHealth = this.criticalHealth;
 
-    }
+
+
 
 
 

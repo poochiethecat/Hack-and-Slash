@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
             healthbar = enemyHealthBar;
             break;
        }
-
+  
        healthbar.configure(transform: this._transform, currentHealth: ()=>this.curHealth, maxHealth: () =>this.maxHealth);
 
     }
