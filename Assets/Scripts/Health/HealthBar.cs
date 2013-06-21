@@ -3,6 +3,11 @@ using System;
 [System.Serializable]
 public abstract class HealthBar {
 
+
+    /*
+    * Attributes configurable through Unity
+    */
+
     [RangeAttributeWithDefault(50, 1000,300)]
     public int maxWidth = 300;
     [RangeAttributeWithDefault(5, 200, 100)]
@@ -10,14 +15,16 @@ public abstract class HealthBar {
     [RangeAttributeWithDefault(1,100,50)]
     public int minWidth = 50;
 
+    // Rectangle of the healthbar, gets smaller with change in health
     public Rect healthBox;
-    private Rect drawing_bar;
     public RectOffset barBorder;
 
 
     // Style of the bar-part of the healthbar
     protected    GUIStyle healthBarStyle;
     // style for the text
+
+    // TODO: Create protected delegate for these so that they can be configured only in the subclasses that need them.
     public GUIStyle textStyleNormal;
     public GUIStyle textStyleTargetted;
 
@@ -26,27 +33,28 @@ public abstract class HealthBar {
 
 
     public Color background = Color.cyan;
-    private Color _lastBackground = Color.cyan;
     public Color border = Color.black;
-    private Color _lastBorder = Color.black;
-
+    ///<summary>
+    /// The colors chosen in the unity GUI, do not use these directly.
+    ///</summary>
     public Color fullHealth = Color.green;
-    private Color _lastFullHealth = Color.green;
     public Color criticalHealth = Color.red;
-    private Color _lastCriticalHealth = Color.red;
 
 
+
+
+
+    /*
+    * Protected Variables, things used in subclasses like Textures, styles, the transform, the computed rectangles.
+    */
+
+    protected Transform _transform;
 
     // Style for the border/outer box
     protected GUIStyle borderStyle;
     // Style for the background/inner box
     protected GUIStyle backgroundStyle;
 
-
-
-    protected Transform _transform;
-
-    // Rectangle of the healthbar, gets smaller with change in health
 
     // Rectangle of the max healthbar
     protected Rect backgroundBox;
@@ -62,28 +70,28 @@ public abstract class HealthBar {
     protected Texture2D clearTexture ;
 
 
+
+    /*
+    * Private Variables, used for saving the state of colors.
+    */
+
+    private Color _lastBackground = Color.cyan;
+    private Color _lastBorder = Color.black;
+    private Color _lastFullHealth = Color.green;
+    private Color _lastCriticalHealth = Color.red;
     private Texture2D _lastHealthTexture;
-
-
-
     private float _lastHealth;
-
     private bool firstrun;
-
-
-
-
-
     private float _healthPercentage;
-
-
     private Func<float> maxHealth;
     private Func<float> currentHealth;
 
 
-    // Getters for computed variables
+    /*
+    * Getters for computed variables
+    */
 
-    private float CurrentHealth {
+    protected float CurrentHealth {
         get {
             float health = currentHealth();
             if (this._lastHealth != health)
@@ -94,29 +102,31 @@ public abstract class HealthBar {
             return _lastHealth;
         }
     }
-    private float MaximumHealth {
+    protected float MaximumHealth {
         get {
             return maxHealth();
         }
     }
 
-    private bool Configured {
-        get {
-            return this.isConfigured();
-        }
-    }
-
-    private float HealthPercentage {
+    protected float HealthPercentage {
         get {
             this._healthPercentage = this.CurrentHealth/this.MaximumHealth;
             return this._healthPercentage;
         }
     }
 
+    protected bool Configured {
+        get {
+            return this.isConfigured();
+        }
+    }
 
 
 
-    // Public Functions
+    /*
+    * Public Functions
+    */
+
     public abstract void OnGUI();
 
     /// <summary>
@@ -135,7 +145,7 @@ public abstract class HealthBar {
                 this.initGUI();
                 this.firstrun = false;
             }
-            this.healthBox.width  = this.backgroundBox.width*this.HealthPercentage;
+
             this.update();
 
 
@@ -177,7 +187,9 @@ public abstract class HealthBar {
     }
 
 
-    // Initialization
+    /*
+    * Initialization
+    */
 
     protected void initGUI()
     {
@@ -222,8 +234,9 @@ public abstract class HealthBar {
     }
 
 
-    // Helper Functions
-
+    /*
+    * Helper Functions
+    */
     private Boolean isConfigured()
     {
         bool m =  this.maxHealth == null;
@@ -276,7 +289,9 @@ public abstract class HealthBar {
         return ColoredTexture.generatePixel(targetColor.ToColor());
     }
 
-    // Update Functions
+    /*
+    * Update Functions
+    */
 
     private void update()
     {
@@ -291,8 +306,48 @@ public abstract class HealthBar {
         this.backgroundStyle.normal.background = this.backgroundTexture;
     }
 
+    protected Color FullHealth
+    {
+        get {
+            return getGUIColor("fullHealth");
 
-    private void updateTextures(bool forceHealth = false)
+        }
+
+    }
+    protected Color CriticalHealth
+    {
+        get {
+            return getGUIColor("criticalHealth");
+        }
+
+    }
+
+
+    private Color getGUIColor(String which)
+    {
+        bool criticalHealthEqual = this.colorsEqual(this.criticalHealth,this._lastCriticalHealth);
+        bool fullHealthEqual = this.colorsEqual(this.fullHealth,this._lastFullHealth);
+        Color returnvalue = Color.red;
+        switch (which)
+        {
+            case "fullHealth":
+                if (!fullHealthEqual || this._lastHealthTexture == null)
+                    this._lastFullHealth = this.fullHealth;
+                returnvalue =  this._lastFullHealth;
+                break;
+            case "criticalHealth":
+                if (!criticalHealthEqual || this._lastHealthTexture == null)
+                    this._lastCriticalHealth = this.criticalHealth;
+                returnvalue = this._lastCriticalHealth
+                break;
+        }
+        if (forceHealth || !fullHealthEqual || !criticalHealthEqual)
+            this._lastHealthTexture = this.healthTexture();
+        return Color.red;
+    }
+
+
+    private void updateTextures()//bool forceHealth = false)
     {
         if (this.backgroundTexture == null || !this.colorsEqual(this.background, this._lastBackground))
         {
@@ -304,14 +359,13 @@ public abstract class HealthBar {
             this._lastBorder = this.border;
             this.borderTexture = ColoredTexture.generatePixel(this._lastBorder);
         }
-        bool criticalHealthEqual = this.colorsEqual(this.criticalHealth,this._lastCriticalHealth);
-        bool fullHealthEqual = this.colorsEqual(this.fullHealth,this._lastFullHealth);
-        if (!fullHealthEqual || this._lastHealthTexture == null)
-            this._lastFullHealth = this.fullHealth;
-        if (!criticalHealthEqual || this._lastHealthTexture == null)
-            this._lastCriticalHealth = this.criticalHealth;
-        if (forceHealth || !fullHealthEqual || !criticalHealthEqual)
-            this._lastHealthTexture = this.healthTexture();
+        // bool criticalHealthEqual = this.colorsEqual(this.criticalHealth,this._lastCriticalHealth);
+        // bool fullHealthEqual = this.colorsEqual(this.fullHealth,this._lastFullHealth);
+        // if (!fullHealthEqual || this._lastHealthTexture == null)
+        //     this._lastFullHealth = this.fullHealth;
+        // if (!criticalHealthEqual || this._lastHealthTexture == null)
+        //     this._lastCriticalHealth = this.criticalHealth;
+
     }
 
 
