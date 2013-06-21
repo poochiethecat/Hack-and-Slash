@@ -24,10 +24,30 @@ public class EnemyHealthBar : HealthBar
 
 
     private Transform _player;
+    private Camera _camera;
 
+
+
+
+    private float distanceFromPlayer()
+    {
+        if (_player == null)
+        _player = GameObject.FindGameObjectWithTag("Player").
+            GetComponent<Transform>();
+
+        return (this._player.position - this._transform.position).magnitude;
+    }
+
+    private Vector3 screenPosition()
+    {
+        if (_camera == null)
+            _camera = GameObject.FindGameObjectWithTag("MainCamera")
+                .GetComponent<Camera>();
+
+        return _camera.WorldToScreenPoint(this._transform.position);
+    }
 
     //TODO: Refactor this monster xD
-
     override public void OnGUI()
     {
         if (this.Configured)
@@ -36,18 +56,12 @@ public class EnemyHealthBar : HealthBar
 
             if (mystate.ScreenState == StateName.OnScreen)
             {
-                if (_player == null)
-                    _player = GameObject.FindGameObjectWithTag("Player").
-                    GetComponent<Transform>();
-
-                Vector3 screenPos = GameObject.FindGameObjectWithTag("MainCamera")
-                    .GetComponent<Camera>()
-                    .WorldToScreenPoint(this._transform.position);
-                float distanceFromPlayer = (this._player.position - this._transform.position).magnitude;
+                float distanceFromPlayer =  this.distanceFromPlayer();
 
 
-                if (distanceFromPlayer < this.maxVisibleDistance) // Don't draw if we are too far away
+                if (distanceFromPlayer <  this.maxVisibleDistance) // Don't draw if we are too far away
                 {
+                    Vector3 screenPos = this.screenPosition();
 
 
                     double ratio_distance = distanceRatio*this.maxVisibleDistance;
@@ -56,34 +70,34 @@ public class EnemyHealthBar : HealthBar
                     if (ratio < 0 ) ratio = 0;
                     double currentWidth = Math.Pow( 1-distanceFromPlayer/ratio_distance, this.powersOfRatio )*this.maximumSize.width;
                     float realWidth = (float)( currentWidth < this.minWidth ? this.minWidth : currentWidth );
-                    float height = (float) barHeight < this.minHeight ? this.minHeight   : this.barHeight;
+                    float realHeight = (float) this.barHeight < this.minHeight ? this.minHeight   : this.barHeight;
+
+
+
                     healthRect = new Rect(
                         left: screenPos.x-realWidth/2,
                         top: (float)(Screen.height - screenPos.y - ratio*baseYoffset-minYoffset),
                         width: realWidth,
-                        height: height
+                        height: realHeight
                     );
                     this.backgroundRect = new Rect(left: this.healthRect.x, top: this.healthRect.y,width:  this.healthRect.width,height: this.healthRect.height);
                     this.healthRect.width  = this.healthRect.width*this.HealthPercentage;
+
+
                     switch (mystate.TargetState)
                     {
                     case StateName.Targetted:
                         base.textStyle = () => this.textStyleTargetted;
-                        this.draw(
-                            text: this._transform.name+": ",
-                            drawDescription: realWidth > this.noDescriptionLimit,
-                            noText: realWidth < this.noTextLimit
-                        );
                         break;
-                    default:
+                    case StateName.Normal:
                         base.textStyle = () => this.textStyleNormal;
-                        this.draw(
-                            text: this._transform.name+": ",
-                            drawDescription: realWidth > this.noDescriptionLimit,
-                            noText: realWidth < this.noTextLimit
-                        );
                         break;
                     }
+                    this.draw(
+                        text: this._transform.name+": ",
+                        drawDescription: realWidth > this.noDescriptionLimit,
+                        noText: realWidth < this.noTextLimit
+                    );
 
                 }
             }

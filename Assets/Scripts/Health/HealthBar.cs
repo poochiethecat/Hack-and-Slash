@@ -84,26 +84,29 @@ public abstract class HealthBar {
     protected Rect healthRect;
 
 
-    /// <summary>
-    /// Background Texture, visible if health < 100%
-    /// </summary>
-    protected Texture2D backgroundTexture ;
-
-    /// <summary>
-    /// Border Texture, this color takes the border
-    /// </summary>
-    protected Texture2D borderTexture;
-
-    /// <summary>
-    ///  transparent texture for the background of the text
-    /// </summary>
-    protected Texture2D clearTexture ;
-
-
 
     /*
     * Private Variables, used for saving the state of colors.
     */
+
+
+
+    /// <summary>
+    /// Background Texture, visible if health < 100%
+    /// </summary>
+    private Texture2D backgroundTexture ;
+
+    /// <summary>
+    /// Border Texture, this color takes the border
+    /// </summary>
+    private Texture2D borderTexture;
+
+    /// <summary>
+    ///  transparent texture for the background of the text
+    /// </summary>
+    private Texture2D clearTexture ;
+
+
 
     private Color _lastBackgroundColor = Color.cyan;
     private Color _lastBorderColor = Color.black;
