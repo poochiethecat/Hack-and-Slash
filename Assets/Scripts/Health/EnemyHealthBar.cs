@@ -26,6 +26,8 @@ public class EnemyHealthBar : HealthBar
     private Transform _player;
     private Camera _camera;
 
+    private float maxMagnitudeFromPlayer;
+
 
 
 
@@ -35,7 +37,7 @@ public class EnemyHealthBar : HealthBar
         _player = GameObject.FindGameObjectWithTag("Player").
             GetComponent<Transform>();
 
-        return (this._player.position - this._transform.position).magnitude;
+        return (this._player.position - this._transform.position).sqrMagnitude;
     }
 
     private Vector3 screenPosition()
@@ -57,16 +59,16 @@ public class EnemyHealthBar : HealthBar
             if (mystate.ScreenState == StateName.OnScreen)
             {
                 float distanceFromPlayer =  this.distanceFromPlayer();
+                this.maxMagnitudeFromPlayer = Mathf.Pow(this.maxVisibleDistance,2);
 
-
-                if (distanceFromPlayer <  this.maxVisibleDistance) // Don't draw if we are too far away
+                if (distanceFromPlayer <  this.maxMagnitudeFromPlayer) // Don't draw if we are too far away
                 {
                     Vector3 screenPos = this.screenPosition();
 
 
-                    double ratio_distance = distanceRatio*this.maxVisibleDistance;
+                    double ratio_distance = Mathf.Pow((float)distanceRatio,2f)*this.maxMagnitudeFromPlayer;
 
-                    double ratio = Math.Pow(1-distanceFromPlayer/ratio_distance,1);
+                    double ratio = 1-distanceFromPlayer/ratio_distance;
                     if (ratio < 0 ) ratio = 0;
                     double currentWidth = Math.Pow( 1-distanceFromPlayer/ratio_distance, this.powersOfRatio )*this.maximumSize.width;
                     float realWidth = (float)( currentWidth < this.minWidth ? this.minWidth : currentWidth );

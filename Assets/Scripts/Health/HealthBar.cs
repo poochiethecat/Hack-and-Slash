@@ -94,17 +94,17 @@ public abstract class HealthBar {
     /// <summary>
     /// Background Texture, visible if health < 100%
     /// </summary>
-    private Texture2D backgroundTexture ;
+    private Texture2D _backgroundTexture ;
 
     /// <summary>
     /// Border Texture, this color takes the border
     /// </summary>
-    private Texture2D borderTexture;
+    private Texture2D _borderTexture;
 
     /// <summary>
     ///  transparent texture for the background of the text
     /// </summary>
-    private Texture2D clearTexture ;
+    private Texture2D _clearTexture ;
 
 
 
@@ -175,24 +175,24 @@ public abstract class HealthBar {
     protected Texture2D BorderTexture
     {
         get {
-            if (this.borderTexture == null || !this.ColorsEqual(this.borderColor, this._lastBorderColor))
+            if (this._borderTexture == null || !this.ColorsEqual(this.borderColor, this._lastBorderColor))
             {
                 this._lastBorderColor = this.borderColor;
-                this.borderTexture = ColoredTexture.generatePixel(this._lastBorderColor);
+                this._borderTexture = ColoredTexture.generatePixel(this._lastBorderColor);
             }
-            return this.borderTexture;
+            return this._borderTexture;
         }
     }
 
     protected Texture2D BackgroundTexture
     {
         get {
-        if (this.backgroundTexture == null || !this.ColorsEqual(this.backgroundColor, this._lastBackgroundColor))
+        if (this._backgroundTexture == null || !this.ColorsEqual(this.backgroundColor, this._lastBackgroundColor))
         {
             this._lastBackgroundColor = this.backgroundColor;
-            this.backgroundTexture = ColoredTexture.generatePixel(this._lastBackgroundColor);
+            this._backgroundTexture = ColoredTexture.generatePixel(this._lastBackgroundColor);
         }
-            return this.backgroundTexture;
+            return this._backgroundTexture;
         }
     }
 
@@ -275,20 +275,20 @@ public abstract class HealthBar {
 
     private void InitTextures()
     {
-        this.backgroundTexture = ColoredTexture.generatePixel(this.backgroundColor);
-        this.borderTexture = ColoredTexture.generatePixel(this.borderColor);
-        this.clearTexture = ColoredTexture.generatePixel(Color.clear);
+        this._backgroundTexture = ColoredTexture.generatePixel(this.backgroundColor);
+        this._borderTexture = ColoredTexture.generatePixel(this.borderColor);
+        this._clearTexture = ColoredTexture.generatePixel(Color.clear);
     }
 
     private void CreateStyles()
     {
         this.backgroundStyle = new GUIStyle();
-        this.backgroundStyle.normal.background = this.backgroundTexture;
+        this.backgroundStyle.normal.background = this._backgroundTexture;
         this.backgroundStyle.stretchWidth = false;
         this.backgroundStyle.normal.textColor = Color.gray;
 
         this.borderStyle = new GUIStyle();
-        this.borderStyle.normal.background = this.borderTexture;
+        this.borderStyle.normal.background = this._borderTexture;
         this.borderStyle.stretchWidth = false;
 
         this.healthBarStyle = new GUIStyle(GUI.skin.box);

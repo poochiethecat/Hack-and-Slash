@@ -253,7 +253,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 341494391}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a1f7a225f678e341bc69a8bdf27c56c, type: 3}
   m_Name: 
@@ -340,13 +340,13 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 0
-      height: 0
+      width: 300
+      height: 30
     padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
+      m_Left: 3
+      m_Right: 3
+      m_Top: 3
+      m_Bottom: 3
     cutoffPercentage: 0
     backgroundColor: {r: 0, g: 1, b: 1, a: 1}
     borderColor: {r: 0, g: 0, b: 0, a: 1}
@@ -472,7 +472,7 @@ MonoBehaviour:
       m_FixedHeight: 0
       m_StretchWidth: 1
       m_StretchHeight: 0
-    distanceRatio: .80000001192092896
+    distanceRatio: .36000001430511475
     minYoffset: 20
     baseYoffset: 50
     powersOfRatio: 3
@@ -782,16 +782,16 @@ MonoBehaviour:
   playerHealthBar:
     maximumSize:
       serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
+      x: 5
+      y: 5
+      width: 300
+      height: 30
     padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    cutoffPercentage: 0
+      m_Left: 5
+      m_Right: 5
+      m_Top: 5
+      m_Bottom: 5
+    cutoffPercentage: 1
     backgroundColor: {r: 0, g: 1, b: 1, a: 1}
     borderColor: {r: 0, g: 0, b: 0, a: 1}
     fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
@@ -842,10 +842,10 @@ MonoBehaviour:
         m_Right: 0
         m_Top: 0
         m_Bottom: 0
-      m_Font: {fileID: 0}
-      m_FontSize: 0
-      m_FontStyle: 0
-      m_Alignment: 0
+      m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+      m_FontSize: 20
+      m_FontStyle: 1
+      m_Alignment: 4
       m_WordWrap: 0
       m_RichText: 1
       m_TextClipping: 0
@@ -858,16 +858,16 @@ MonoBehaviour:
   enemyHealthBar:
     maximumSize:
       serializedVersion: 2
-      x: 0
-      y: 0
-      width: 0
-      height: 0
+      x: 5
+      y: 5
+      width: 600
+      height: 20
     padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    cutoffPercentage: 0
+      m_Left: 5
+      m_Right: 5
+      m_Top: 5
+      m_Bottom: 5
+    cutoffPercentage: .300000012
     backgroundColor: {r: 0, g: 1, b: 1, a: 1}
     borderColor: {r: 0, g: 0, b: 0, a: 1}
     fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1038946075}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a1f7a225f678e341bc69a8bdf27c56c, type: 3}
   m_Name: 
@@ -1211,13 +1211,13 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 0
-      height: 0
+      width: 300
+      height: 30
     padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
+      m_Left: 3
+      m_Right: 3
+      m_Top: 3
+      m_Bottom: 3
     cutoffPercentage: 0
     backgroundColor: {r: 0, g: 1, b: 1, a: 1}
     borderColor: {r: 0, g: 0, b: 0, a: 1}
@@ -1343,7 +1343,7 @@ MonoBehaviour:
       m_FixedHeight: 0
       m_StretchWidth: 1
       m_StretchHeight: 0
-    distanceRatio: .80000001192092896
+    distanceRatio: .36000001430511475
     minYoffset: 20
     baseYoffset: 50
     powersOfRatio: 3
@@ -1751,13 +1751,13 @@ MonoBehaviour:
       x: 0
       y: 0
       width: 300
-      height: 20
+      height: 30
     padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    cutoffPercentage: .20000000298023224
+      m_Left: 3
+      m_Right: 3
+      m_Top: 3
+      m_Bottom: 3
+    cutoffPercentage: .200000003
     backgroundColor: {r: 0, g: 1, b: 1, a: 1}
     borderColor: {r: 0, g: 0, b: 0, a: 1}
     fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
@@ -1882,7 +1882,7 @@ MonoBehaviour:
       m_FixedHeight: 0
       m_StretchWidth: 1
       m_StretchHeight: 0
-    distanceRatio: .80000001192092896
+    distanceRatio: .36000001430511475
     minYoffset: 20
     baseYoffset: 50
     powersOfRatio: 3
