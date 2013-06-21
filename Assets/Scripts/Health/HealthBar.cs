@@ -8,10 +8,6 @@ public abstract class HealthBar {
     * Attributes configurable through Unity
     */
 
-    [RangeAttributeWithDefault(1,100,50)]
-    public int minWidth = 50;
-
-
     ///<summary>
     /// The Total size of the Healthbar
     ///</summary>
@@ -22,7 +18,11 @@ public abstract class HealthBar {
     ///</summary>
     public RectOffset padding;
 
-    public double cutoffPercentage = 0.2; // Below this ratio of health, the bar will be red
+    /// <summary>
+    /// Blow this percentage, the critical health color will be displayed instead of a linearly computed color.
+    /// </summary>
+    [RangeAttribute(0f,1f)]
+    public float cutoffPercentage = 0.2f; // Below this ratio of health, the bar will be red
 
 
     ///<summary>
@@ -44,10 +44,6 @@ public abstract class HealthBar {
     /// The color chosen in the unity GUI, used for the critical Health
     ///</summary>
     public Color criticalHealthColor = Color.red;
-
-
-
-
 
     /*
     * Protected Variables, things used in subclasses like Textures, styles, the transform, the computed rectangles.
@@ -378,7 +374,8 @@ public abstract class HealthBar {
 
         // Reach 0 a bit faster than standard
         if (healthPercentage < cutoffPercentage)
-            healthPercentage = 0;
+            return ColoredTexture.generatePixel(this.CriticalHealth);
+
         double newLightness = _critHealth.l - healthPercentage*(_critHealth.l - _fullHealth.l);
         double newA = _critHealth.a -healthPercentage*(_critHealth.a - _fullHealth.a);
         double newB = _critHealth.b - healthPercentage*(_critHealth.b - _fullHealth.b);
@@ -393,7 +390,7 @@ public abstract class HealthBar {
     private void Update()
     {
         this.UpdateStyles();
-        this.AdjustForBorder();
+        this.AdjustForPadding();
     }
 
     private void UpdateStyles()
@@ -403,7 +400,7 @@ public abstract class HealthBar {
         this.backgroundStyle.normal.background = this.BackgroundTexture;
     }
 
-    private void AdjustForBorder()
+    private void AdjustForPadding()
     {
         borderRect = new Rect(backgroundRect);
         healthRect = new Rect(

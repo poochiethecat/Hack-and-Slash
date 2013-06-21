@@ -4,9 +4,13 @@ using System;
 [System.Serializable]
 public class EnemyHealthBar : HealthBar
 {
-    
+
     [RangeAttributeWithDefault(5, 200, 100)]
     public int maxVisibleDistance = 100;
+
+    [RangeAttributeWithDefault(1,100,50)]
+    public int minWidth = 50;
+
     public GUIStyle textStyleNormal;
     public GUIStyle textStyleTargetted;
     public double distanceRatio = 0.8;

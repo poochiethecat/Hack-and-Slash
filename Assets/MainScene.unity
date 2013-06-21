@@ -260,7 +260,6 @@ MonoBehaviour:
   maxHealth: 100
   curHealth: 100
   playerHealthBar:
-    minWidth: 0
     maximumSize:
       serializedVersion: 2
       x: 0
@@ -337,7 +336,6 @@ MonoBehaviour:
       m_StretchWidth: 1
       m_StretchHeight: 0
   enemyHealthBar:
-    minWidth: 50
     maximumSize:
       serializedVersion: 2
       x: 0
@@ -355,6 +353,7 @@ MonoBehaviour:
     fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
     criticalHealthColor: {r: 1, g: 0, b: 0, a: 1}
     maxVisibleDistance: 100
+    minWidth: 50
     textStyleNormal:
       m_Name: 
       m_Normal:
@@ -774,14 +773,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 899210503}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a1f7a225f678e341bc69a8bdf27c56c, type: 3}
   m_Name: 
   maxHealth: 100
   curHealth: 100
   playerHealthBar:
-    minWidth: 50
     maximumSize:
       serializedVersion: 2
       x: 0
@@ -858,7 +856,6 @@ MonoBehaviour:
       m_StretchWidth: 1
       m_StretchHeight: 0
   enemyHealthBar:
-    minWidth: 50
     maximumSize:
       serializedVersion: 2
       x: 0
@@ -876,6 +873,7 @@ MonoBehaviour:
     fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
     criticalHealthColor: {r: 1, g: 0, b: 0, a: 1}
     maxVisibleDistance: 100
+    minWidth: 50
     textStyleNormal:
       m_Name: 
       m_Normal:
@@ -1133,7 +1131,6 @@ MonoBehaviour:
   maxHealth: 100
   curHealth: 100
   playerHealthBar:
-    minWidth: 0
     maximumSize:
       serializedVersion: 2
       x: 0
@@ -1210,7 +1207,6 @@ MonoBehaviour:
       m_StretchWidth: 1
       m_StretchHeight: 0
   enemyHealthBar:
-    minWidth: 50
     maximumSize:
       serializedVersion: 2
       x: 0
@@ -1228,6 +1224,7 @@ MonoBehaviour:
     fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
     criticalHealthColor: {r: 1, g: 0, b: 0, a: 1}
     maxVisibleDistance: 100
+    minWidth: 50
     textStyleNormal:
       m_Name: 
       m_Normal:
@@ -1673,7 +1670,6 @@ MonoBehaviour:
   maxHealth: 100
   curHealth: 100
   playerHealthBar:
-    minWidth: 50
     maximumSize:
       serializedVersion: 2
       x: 0
@@ -1750,12 +1746,11 @@ MonoBehaviour:
       m_StretchWidth: 1
       m_StretchHeight: 0
   enemyHealthBar:
-    minWidth: 50
     maximumSize:
       serializedVersion: 2
       x: 0
       y: 0
-      width: 600
+      width: 300
       height: 20
     padding:
       m_Left: 0
@@ -1768,6 +1763,7 @@ MonoBehaviour:
     fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
     criticalHealthColor: {r: 1, g: 0, b: 0, a: 1}
     maxVisibleDistance: 100
+    minWidth: 50
     textStyleNormal:
       m_Name: 
       m_Normal:
