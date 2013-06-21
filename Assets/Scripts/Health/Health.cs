@@ -28,6 +28,7 @@ public class Health : MonoBehaviour
             healthbar = playerHealthBar;
             break;
         default:
+             
             healthbar = enemyHealthBar;
             break;
        }

@@ -14,19 +14,19 @@ public abstract class HealthBar {
     public int maxVisibleDistance = 100;
     [RangeAttributeWithDefault(1,100,50)]
     public int minWidth = 50;
- 
-    
+
+
     //TODO: Really set the maximum size with this, then we do not need maxWidth up there.
-    
+
     ///<summary>
     /// The Total size of the Healthbar
     ///</summary>
-    public Rect healthRect;
+    public Rect maximumSize;
 
     ///<summary>
     /// The border around the healthbar
     ///</summary>
-    public RectOffset barBorder;
+    public RectOffset padding;
 
     public double cutoffPercentage = 0.2; // Below this ratio of health, the bar will be red
 
@@ -84,21 +84,26 @@ public abstract class HealthBar {
     /// </summary>
     protected Rect backgroundRect;
     /// <summary>
-    /// The border rect, has the maximum size of the healthbar.
+    /// The border/padding rect, has the maximum size of the healthbar.
     /// </summary>
     protected Rect borderRect;
+
+    /// <summary>
+    /// The health rect.
+    /// </summary>
+    protected Rect healthRect;
 
 
     /// <summary>
     /// Background Texture, visible if health < 100%
     /// </summary>
     protected Texture2D backgroundTexture ;
-    
+
     /// <summary>
     /// Border Texture, this color takes the border
     /// </summary>
     protected Texture2D borderTexture;
-    
+
     /// <summary>
     ///  transparent texture for the background of the text
     /// </summary>
@@ -177,7 +182,7 @@ public abstract class HealthBar {
     protected Texture2D BorderTexture
     {
         get {
-            if (this.borderTexture == null || !this.colorsEqual(this.borderColor, this._lastBackgroundColor))
+            if (this.borderTexture == null || !this.colorsEqual(this.borderColor, this._lastBorderColor))
             {
                 this._lastBorderColor = this.borderColor;
                 this.borderTexture = ColoredTexture.generatePixel(this._lastBorderColor);
@@ -392,6 +397,7 @@ public abstract class HealthBar {
     private void update()
     {
         this.updateStyles();
+        this.adjustForBorder();
     }
 
     private void updateStyles()
@@ -399,6 +405,23 @@ public abstract class HealthBar {
         this.healthBarStyle.normal.background = this.HealthTexture;
         this.borderStyle.normal.background = this.BorderTexture;
         this.backgroundStyle.normal.background = this.BackgroundTexture;
+    }
+
+    private void adjustForBorder()
+    {
+        borderRect = new Rect(backgroundRect);
+        healthRect = new Rect(
+            this.healthRect.x+this.padding.left,
+            this.healthRect.y+this.padding.top,
+            this.healthRect.width-this.padding.right-this.padding.left,
+            this.healthRect.height-this.padding.bottom-this.padding.top
+        );
+        backgroundRect = new Rect(
+            this.backgroundRect.x+this.padding.left,
+            this.backgroundRect.y+this.padding.top,
+            this.backgroundRect.width-this.padding.right-this.padding.left,
+            this.backgroundRect.height-this.padding.bottom-this.padding.top
+        );
     }
 
 

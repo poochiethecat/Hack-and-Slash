@@ -14,6 +14,7 @@ public class EnemyHealthBar : HealthBar
     public float minHeight = 20;
     public float noTextLimit = 80;
     public float noDescriptionLimit = 140;
+    
 
     private Transform _player;
 
@@ -56,13 +57,7 @@ public class EnemyHealthBar : HealthBar
                         height: height
                     );
                     this.backgroundRect = new Rect(left: this.healthRect.x, top: this.healthRect.y,width:  this.healthRect.width,height: this.healthRect.height);
-                    this.borderRect = new Rect(
-                        left: this.healthRect.x-this.barBorder.left,
-                        top: this.healthRect.y-this.barBorder.top,
-                        width: this.healthRect.width+this.barBorder.right+this.barBorder.left,
-                        height: this.healthRect.height+this.barBorder.bottom+this.barBorder.top
-                    );
-                    this.healthRect.width  = this.backgroundRect.width*this.HealthPercentage;
+                    this.healthRect.width  = this.healthRect.width*this.HealthPercentage;
                     switch (mystate.TargetState)
                     {
                     case StateName.Targetted:

@@ -9,27 +9,19 @@ public class PlayerHealthBar : HealthBar
     {
         if (this.Configured)
         {
+            if (this.textStyle == null)
+                this.textStyle = () => playerTextStyle;
             backgroundRect = new Rect(
-                this.healthRect.x,
-                this.healthRect.y,
-                this.healthRect.width,
-                this.healthRect.height
+                this.maximumSize.x,
+                this.maximumSize.y,
+                this.maximumSize.width,
+                this.maximumSize.height
             );
-            borderRect = new Rect(
-                this.healthRect.x-this.barBorder.left,
-                this.healthRect.y-this.barBorder.top,
-                this.healthRect.width+this.barBorder.right+this.barBorder.left,
-                this.healthRect.height+this.barBorder.bottom+this.barBorder.top
-            );
+            healthRect = new Rect(backgroundRect);
+
             this.healthRect.width  = this.backgroundRect.width*this.HealthPercentage;
             base.draw(this._transform.name+": ");
         }
-    }
-
-    public void configure(Transform transform, Func<float> maxHealth, Func<float> currentHealth)
-    {
-        base.configure(transform, maxHealth, currentHealth);
-        this.textStyle = () => playerTextStyle;
     }
 }
 
