@@ -28,12 +28,12 @@ public class Health : MonoBehaviour
             healthbar = playerHealthBar;
             break;
         default:
-             
+
             healthbar = enemyHealthBar;
             break;
        }
-  
-       healthbar.configure(transform: this._transform, currentHealth: ()=>this.curHealth, maxHealth: () =>this.maxHealth);
+
+       healthbar.Configure(transform: this._transform, currentHealth: ()=>this.curHealth, maxHealth: () =>this.maxHealth);
 
     }
 

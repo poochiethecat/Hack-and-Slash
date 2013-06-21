@@ -154,14 +154,14 @@ public abstract class HealthBar {
     protected bool Configured
     {
         get {
-            return this.isConfigured();
+            return this.IsConfigured();
         }
     }
 
     protected Color FullHealth
     {
         get {
-            return getGUIColor("fullHealth");
+            return GetGUIColor("fullHealth");
 
         }
 
@@ -169,14 +169,14 @@ public abstract class HealthBar {
     protected Color CriticalHealth
     {
         get {
-            return getGUIColor("criticalHealth");
+            return GetGUIColor("criticalHealth");
         }
 
     }
     protected Texture2D BorderTexture
     {
         get {
-            if (this.borderTexture == null || !this.colorsEqual(this.borderColor, this._lastBorderColor))
+            if (this.borderTexture == null || !this.ColorsEqual(this.borderColor, this._lastBorderColor))
             {
                 this._lastBorderColor = this.borderColor;
                 this.borderTexture = ColoredTexture.generatePixel(this._lastBorderColor);
@@ -188,12 +188,21 @@ public abstract class HealthBar {
     protected Texture2D BackgroundTexture
     {
         get {
-        if (this.backgroundTexture == null || !this.colorsEqual(this.backgroundColor, this._lastBackgroundColor))
+        if (this.backgroundTexture == null || !this.ColorsEqual(this.backgroundColor, this._lastBackgroundColor))
         {
             this._lastBackgroundColor = this.backgroundColor;
             this.backgroundTexture = ColoredTexture.generatePixel(this._lastBackgroundColor);
         }
             return this.backgroundTexture;
+        }
+    }
+
+    protected Texture2D HealthTexture
+    {
+        get {
+            if (this.HealthChanged() || this.HealthColorChanged())
+                this._lastHealthTexture = this.GenerateHealthTexture();
+            return this._lastHealthTexture;
         }
     }
 
@@ -218,11 +227,11 @@ public abstract class HealthBar {
             if (this.firstrun)
             {
                 // GUI-Functions can only be called during GUI calls, so we call it in here.
-                this.initGUI();
+                this.InitGUI();
                 this.firstrun = false;
             }
 
-            this.update();
+            this.Update();
 
             GUI.Box(this.borderRect,"",this.borderStyle);
             GUI.Box(this.backgroundRect,"",this.backgroundStyle);
@@ -246,7 +255,7 @@ public abstract class HealthBar {
     /// <param name="transform">The transform of the entity this healthbar is for</param>
     /// <param name="maxHealth">Function returning a float/int which is the maximum Health of the entity</param>
     /// <param name="currentHealth">Function returning a float/int which is the current health of the entity</param>
-    public void configure(Transform transform, Func<float> maxHealth, Func<float> currentHealth )
+    public void Configure(Transform transform, Func<float> maxHealth, Func<float> currentHealth )
     {
         this.maxHealth = maxHealth;
         this.currentHealth = currentHealth;
@@ -259,20 +268,20 @@ public abstract class HealthBar {
     * Initialization
     */
 
-    protected void initGUI()
+    protected void InitGUI()
     {
-        this.initTextures();
-        this.createStyles();
+        this.InitTextures();
+        this.CreateStyles();
     }
 
-    private void initTextures()
+    private void InitTextures()
     {
         this.backgroundTexture = ColoredTexture.generatePixel(this.backgroundColor);
         this.borderTexture = ColoredTexture.generatePixel(this.borderColor);
         this.clearTexture = ColoredTexture.generatePixel(Color.clear);
     }
 
-    private void createStyles()
+    private void CreateStyles()
     {
         this.backgroundStyle = new GUIStyle();
         this.backgroundStyle.normal.background = this.backgroundTexture;
@@ -296,7 +305,7 @@ public abstract class HealthBar {
     /*
     * Helper Functions
     */
-    private bool isConfigured()
+    private bool IsConfigured()
     {
         bool m =  this.maxHealth == null;
         bool c =  this.currentHealth == null;
@@ -314,29 +323,29 @@ public abstract class HealthBar {
         return !m && !c && !t;
     }
 
-    private bool healthChanged()
+    private bool HealthChanged()
     {
         return this._lastHealth != currentHealth();
     }
 
-    private bool healthColorChanged()
+    private bool HealthColorChanged()
     {
-        return !this.colorsEqual(this.criticalHealthColor,this._lastCriticalHealthColor) || !this.colorsEqual(this.fullHealthColor,this._lastFullHealthColor);
+        return !this.ColorsEqual(this.criticalHealthColor,this._lastCriticalHealthColor) || !this.ColorsEqual(this.fullHealthColor,this._lastFullHealthColor);
     }
 
 
-    private Color getGUIColor(String which)
+    private Color GetGUIColor(String which)
     {
         Color returnvalue = Color.red;
         switch (which)
         {
             case "fullHealth":
-                if (!this.colorsEqual(this.fullHealthColor,this._lastFullHealthColor))
+                if (!this.ColorsEqual(this.fullHealthColor,this._lastFullHealthColor))
                     this._lastFullHealthColor = this.fullHealthColor;
                 returnvalue =  this._lastFullHealthColor;
                 break;
             case "criticalHealth":
-                if (!this.colorsEqual(this.criticalHealthColor,this._lastCriticalHealthColor))
+                if (!this.ColorsEqual(this.criticalHealthColor,this._lastCriticalHealthColor))
                     this._lastCriticalHealthColor = this.criticalHealthColor;
                 returnvalue = this._lastCriticalHealthColor;
                 break;
@@ -344,16 +353,9 @@ public abstract class HealthBar {
         return returnvalue;
     }
 
-    protected Texture2D HealthTexture
-    {
-        get {
-            if (this.healthChanged() || this.healthColorChanged())
-                this._lastHealthTexture = this.generateHealthTexture();
-            return this._lastHealthTexture;
-        }
-    }
 
-    private bool colorsEqual(Color a, Color b, bool debug = false)
+
+    private bool ColorsEqual(Color a, Color b)
     {
         return Mathf.Approximately(a.r, b.r) && Mathf.Approximately(a.g, b.g) && Mathf.Approximately(a.b, b.g) && Mathf.Approximately(a.a,b.a);
     }
@@ -364,7 +366,7 @@ public abstract class HealthBar {
     /// <returns>
     /// A 1x1 Texture with the computed color.
     /// </returns>
-    Texture2D generateHealthTexture()
+    Texture2D GenerateHealthTexture()
     {
 
         // Use LAB-Colors to find a linear path between any two colors in the human colorspace.
@@ -388,20 +390,20 @@ public abstract class HealthBar {
     * Update Functions
     */
 
-    private void update()
+    private void Update()
     {
-        this.updateStyles();
-        this.adjustForBorder();
+        this.UpdateStyles();
+        this.AdjustForBorder();
     }
 
-    private void updateStyles()
+    private void UpdateStyles()
     {
         this.healthBarStyle.normal.background = this.HealthTexture;
         this.borderStyle.normal.background = this.BorderTexture;
         this.backgroundStyle.normal.background = this.BackgroundTexture;
     }
 
-    private void adjustForBorder()
+    private void AdjustForBorder()
     {
         borderRect = new Rect(backgroundRect);
         healthRect = new Rect(
