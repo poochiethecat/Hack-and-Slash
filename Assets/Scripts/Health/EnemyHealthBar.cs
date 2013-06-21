@@ -4,6 +4,9 @@ using System;
 [System.Serializable]
 public class EnemyHealthBar : HealthBar
 {
+    
+    [RangeAttributeWithDefault(5, 200, 100)]
+    public int maxVisibleDistance = 100;
     public GUIStyle textStyleNormal;
     public GUIStyle textStyleTargetted;
     public double distanceRatio = 0.8;
@@ -14,7 +17,7 @@ public class EnemyHealthBar : HealthBar
     public float minHeight = 20;
     public float noTextLimit = 80;
     public float noDescriptionLimit = 140;
-    
+
 
     private Transform _player;
 
@@ -47,7 +50,7 @@ public class EnemyHealthBar : HealthBar
 
                     double ratio = Math.Pow(1-distanceFromPlayer/ratio_distance,1);
                     if (ratio < 0 ) ratio = 0;
-                    double currentWidth = Math.Pow( 1-distanceFromPlayer/ratio_distance, this.powersOfRatio )*maxWidth;
+                    double currentWidth = Math.Pow( 1-distanceFromPlayer/ratio_distance, this.powersOfRatio )*this.maximumSize.width;
                     float realWidth = (float)( currentWidth < this.minWidth ? this.minWidth : currentWidth );
                     float height = (float) barHeight < this.minHeight ? this.minHeight   : this.barHeight;
                     healthRect = new Rect(

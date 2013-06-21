@@ -8,15 +8,9 @@ public abstract class HealthBar {
     * Attributes configurable through Unity
     */
 
-    [RangeAttributeWithDefault(50, 1000,300)]
-    public int maxWidth = 300;
-    [RangeAttributeWithDefault(5, 200, 100)]
-    public int maxVisibleDistance = 100;
     [RangeAttributeWithDefault(1,100,50)]
     public int minWidth = 50;
 
-
-    //TODO: Really set the maximum size with this, then we do not need maxWidth up there.
 
     ///<summary>
     /// The Total size of the Healthbar
