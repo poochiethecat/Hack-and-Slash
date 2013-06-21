@@ -4,6 +4,82 @@
 		"selected_items":
 		[
 			[
+				"_h",
+				"_lastHealthTexture"
+			],
+			[
+				"_last",
+				"_lastHealthTexture"
+			],
+			[
+				"_lastHe",
+				"_lastHealthTexture"
+			],
+			[
+				"update",
+				"updateRectangles"
+			],
+			[
+				"Health",
+				"HealthTexture"
+			],
+			[
+				"last",
+				"_lastHealthTexture"
+			],
+			[
+				"Max",
+				"MaximumHealth"
+			],
+			[
+				"cu",
+				"CurrentHealth"
+			],
+			[
+				"heal",
+				"healthPercentage"
+			],
+			[
+				"maxim",
+				"MaximumHealth"
+			],
+			[
+				"currn",
+				"currentHealth"
+			],
+			[
+				"_las",
+				"_lastHealth"
+			],
+			[
+				"la",
+				"_lastHealthTexture"
+			],
+			[
+				"hea",
+				"healthPercentage"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"border",
+				"borderTexture"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"curr",
+				"currentHealth"
+			],
+			[
+				"max",
+				"maxHealth"
+			],
+			[
 				"inti",
 				"initTextures"
 			],
@@ -14,10 +90,6 @@
 			[
 				"min",
 				"minWidth"
-			],
-			[
-				"back",
-				"backgroundTexture"
 			],
 			[
 				"Tex",
@@ -56,10 +128,6 @@
 				"description"
 			],
 			[
-				"max",
-				"maxWidth"
-			],
-			[
 				"my",
 				"myTransform"
 			],
@@ -74,10 +142,6 @@
 			[
 				"Vector",
 				"Vector3	x, y, z"
-			],
-			[
-				"cu",
-				"current_index"
 			],
 			[
 				"featuretw",
@@ -209,10 +273,6 @@
 			],
 			[
 				"current",
-				"current_index"
-			],
-			[
-				"curr",
 				"current_index"
 			],
 			[
@@ -454,66 +514,6 @@
 			[
 				"over",
 				"overview_j"
-			],
-			[
-				"overvei",
-				"overview_i"
-			],
-			[
-				"M",
-				"MsgBox"
-			],
-			[
-				"person1",
-				"person1_i"
-			],
-			[
-				"ass",
-				"asset_i"
-			],
-			[
-				"perso",
-				"person_horizontal_offset"
-			],
-			[
-				"lea",
-				"leather_j"
-			],
-			[
-				"task1",
-				"task1_j"
-			],
-			[
-				"Clic",
-				"ClickSmooth"
-			],
-			[
-				"targ",
-				"target_j"
-			],
-			[
-				"targe",
-				"target_i"
-			],
-			[
-				"tempe",
-				"temperature_unit"
-			],
-			[
-				"stop",
-				"stopPropagation"
-			],
-			[
-				"obstac",
-				"obstacle_height"
-			],
-			[
-				"obsta",
-				"obstacle_height"
-			],
-			[
-				"obstacle",
-				"obstacle_height"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "Assets/Scripts/Health/Health.cs",
 			"settings":
 			{
-				"buffer_size": 1230,
+				"buffer_size": 1296,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,15 +531,7 @@
 			"file": "Assets/Scripts/Health/HealthBar.cs",
 			"settings":
 			{
-				"buffer_size": 7152,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Assets/Scripts/Health/PlayerHealthBar.cs",
-			"settings":
-			{
-				"buffer_size": 877,
+				"buffer_size": 9205,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +539,15 @@
 			"file": "Assets/Scripts/Health/EnemyHealthBar.cs",
 			"settings":
 			{
-				"buffer_size": 2688,
+				"buffer_size": 3211,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/Health/PlayerHealthBar.cs",
+			"settings":
+			{
+				"buffer_size": 667,
 				"line_ending": "Windows"
 			}
 		},
@@ -556,14 +556,6 @@
 			"settings":
 			{
 				"buffer_size": 935,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Assets/Scripts/Health/ColorTextureAttribute.cs",
-			"settings":
-			{
-				"buffer_size": 302,
 				"line_ending": "Windows"
 			}
 		},
@@ -579,9 +571,17 @@
 	"build_system": "Packages/Unity3D Build System/Unity.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 104.0,
 		"selected_items":
 		[
+			[
+				"c#",
+				"Snippet: c#-doc"
+			],
+			[
+				"scope",
+				"Scope: Show in Status Bar"
+			],
 			[
 				"snip get",
 				"Snippet: getpropertyheight"
@@ -800,6 +800,8 @@
 	},
 	"file_history":
 	[
+		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/PlayerHealthBar.cs",
+		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/unity/c#-doc.sublime-snippet",
 		"/D/Downloads/Diverse Downloads/colorscheme-#422E86.less",
 		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/unity/getpropertyheight.sublime-snippet",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Standard Assets/Character Controllers/Sources/Scripts/CharacterMotor.js",
@@ -816,7 +818,6 @@
 		"/C/Portables Faster/Hack-and-Slash/Assets/Editor/HealthBarDrawer.cs",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/ScaledCurve.cs",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/Health.cs",
-		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/Health/PlayerHealthBar.cs",
 		"/C/Portables Faster/Snake/Assets/Standard Assets/Character Controllers/Sources/Scripts/PlatformInputController.js",
 		"/C/Portables Faster/Hack-and-Slash/Assets/Scripts/State.cs",
 		"/C/Portables Faster/Hack-and-Slash/Assets/WebPlayerTemplates/Default with Links/index.html",
@@ -926,8 +927,7 @@
 		"/W/Documents/Programming/a-mazing-planner/index.html",
 		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/coffeehaml.sublime-build",
 		"/C/Users/archie/AppData/Roaming/Sublime Text 3/Packages/User/CoffeeCompile.sublime-settings",
-		"/W/Documents/Programming/a-mazing-planner/coffee/test.coffee",
-		"/W/Documents/Programming/a-mazing-planner/coffee/overlay.coffee"
+		"/W/Documents/Programming/a-mazing-planner/coffee/test.coffee"
 	],
 	"find":
 	{
@@ -948,6 +948,29 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"HealthTexture",
+			"_healthPercentage",
+			"init",
+			"barBorder",
+			"healthBox",
+			"updateStyles",
+			"ratio",
+			"DistanceFromPlayer",
+			"healthTexture",
+			"bar",
+			"public",
+			"_lastHealth",
+			"currentHealth",
+			"bar",
+			"currentHealth",
+			"maxHealth",
+			"curHealth",
+			"_lastBackground",
+			"background",
+			"backgroundTexture",
+			"public",
+			"entity",
+			"maxHeal",
 			"offset",
 			"description",
 			"ColorTextureAttribute",
@@ -1052,30 +1075,7 @@
 			"msgbox",
 			"conf.where",
 			"ensureActiveWindow",
-			"presetString",
-			"ensureActiveWindow",
-			"MyException",
-			"Exception",
-			"ensureActiveWindow",
-			"Sleep",
-			"200",
-			"collect",
-			"\"neverwinter_crafter_new2.ini\"",
-			"msgbox",
-			"150",
-			"ensureActiveWindow",
-			"collect",
-			"ImageSearch, posi, posj,0,0,1920,1200,*16",
-			".png",
-			"overviewButton",
-			"ImageSearch",
-			"asset",
-			"conf.where == ",
-			"this.config",
-			"number",
-			"Smooth",
-			"ClickSmooth",
-			"config"
+			"presetString"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1095,7 +1095,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1104,53 +1104,37 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1230,
+						"buffer_size": 1296,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								590,
-								590
+								709,
+								709
 							]
 						],
 						"settings":
 						{
 							"bh_regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1158,7 +1142,23 @@
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
-								"bh_double_quote_close"
+								"bh_double_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close"
 							],
 							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"tab_size": 2,
@@ -1176,53 +1176,37 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7152,
+						"buffer_size": 9205,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2931,
-								2952
+								960,
+								960
 							]
 						],
 						"settings":
 						{
 							"bh_regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1230,71 +1214,72 @@
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
-								"bh_double_quote_close"
+								"bh_double_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close"
 							],
+							"show_current_scope_enabled": true,
 							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1170.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "Assets/Scripts/Health/PlayerHealthBar.cs",
+					"file": "Assets/Scripts/Health/EnemyHealthBar.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 877,
+						"buffer_size": 3211,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								443,
+								443
 							]
 						],
 						"settings":
 						{
 							"bh_regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
@@ -1302,41 +1287,56 @@
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
-								"bh_double_quote_close"
+								"bh_double_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close"
 							],
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "Assets/Scripts/Health/EnemyHealthBar.cs",
+					"file": "Assets/Scripts/Health/PlayerHealthBar.cs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2688,
+						"buffer_size": 667,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								368,
-								368
+								109,
+								109
 							]
 						],
 						"settings":
 						{
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -1345,22 +1345,10 @@
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
@@ -1369,10 +1357,26 @@
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
-								"bh_regex_close"
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close"
 							],
 							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"tab_size": 4,
@@ -1458,76 +1462,6 @@
 				},
 				{
 					"buffer": 5,
-					"file": "Assets/Scripts/Health/ColorTextureAttribute.cs",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 302,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close"
-							],
-							"syntax": "Packages/Unity3D/UnityC#.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
 					"file": "Assets/Scripts/Health/DescriptionAttribute.cs",
 					"semi_transient": false,
 					"settings":

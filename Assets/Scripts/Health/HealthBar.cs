@@ -31,7 +31,9 @@ public abstract class HealthBar {
     private Color _lastBorder = Color.black;
 
     public Color fullHealth = Color.green;
+    private Color _lastFullHealth = Color.green;
     public Color criticalHealth = Color.red;
+    private Color _lastCriticalHealth = Color.red;
 
 
 
@@ -69,8 +71,7 @@ public abstract class HealthBar {
     private bool firstrun;
 
 
-    private LABColor _fullHealth;
-    private LABColor _critHealth;
+
 
 
     private float _healthPercentage;
@@ -86,7 +87,7 @@ public abstract class HealthBar {
             if (this._lastHealth != health)
             {
                 this._lastHealth = health;
-                this._lastHealthTexture = this.healthTexture();
+                updateTextures(true);
             }
             return _lastHealth;
         }
@@ -161,27 +162,36 @@ public abstract class HealthBar {
     {
 
         // Use LAB-Colors to find a linear path between any two colors in the human colorspace.
-        this._fullHealth = new LABColor(fullHealth);
-        this._critHealth = new LABColor(criticalHealth);
+        LABColor _fullHealth = new LABColor(this._lastFullHealth);
+        LABColor _critHealth = new LABColor(this._lastCriticalHealth);
 
         float healthPercentage = this.HealthPercentage;
+
 
         // Reach 0 a bit faster than standard
         if (healthPercentage < cutoffPercentage)
             healthPercentage = 0;
-        double newLightness = this._critHealth.l - healthPercentage*(this._critHealth.l - this._fullHealth.l);
-        double newA = this._critHealth.a -healthPercentage*(this._critHealth.a - this._fullHealth.a);
-        double newB = this._critHealth.b - healthPercentage*(this._critHealth.b - this._fullHealth.b);
+        double newLightness = _critHealth.l - healthPercentage*(_critHealth.l - _fullHealth.l);
+        double newA = _critHealth.a -healthPercentage*(_critHealth.a - _fullHealth.a);
+        double newB = _critHealth.b - healthPercentage*(_critHealth.b - _fullHealth.b);
         LABColor targetColor = new LABColor((float)newLightness, (float)newA, (float)newB);
+        // Debug.Log(targetColor.ToColor());
         return ColoredTexture.generatePixel(targetColor.ToColor());
     }
 
     private bool colorsEqual(Color a, Color b)
     {
-        return a.r == b.r && a.g == b.g && a.b == b.g && a.a == b.a;
+        bool cr = Mathf.Approximately(a.r, b.r);
+        bool cg = Mathf.Approximately(a.g, b.g);
+        bool cb = Mathf.Approximately(a.b, b.b);
+        bool ca = Mathf.Approximately(a.a, b.a);
+        bool complete = cr && cg && cb && ca;
+        bool direct = Mathf.Approximately(a.r, b.r) && Mathf.Approximately(a.g, b.g) && Mathf.Approximately(a.b, b.g) && Mathf.Approximately(a.a,b.a);
+        return direct;
+        //return
     }
 
-    private void updateTextures()
+    private void updateTextures(bool forceHealth = false)
     {
         if (this.backgroundTexture == null || !this.colorsEqual(this.background, this._lastBackground))
         {
@@ -193,6 +203,14 @@ public abstract class HealthBar {
             this._lastBorder = this.border;
             this.borderTexture = ColoredTexture.generatePixel(this._lastBorder);
         }
+        bool criticalHealthEqual = this.colorsEqual(this.criticalHealth,this._lastCriticalHealth);
+        bool fullHealthEqual = this.colorsEqual(this.fullHealth,this._lastFullHealth);
+        if (!fullHealthEqual || this._lastHealthTexture == null)
+            this._lastFullHealth = this.fullHealth;
+        if (!criticalHealthEqual || this._lastHealthTexture == null)
+            this._lastCriticalHealth = this.criticalHealth;
+        if (forceHealth || !fullHealthEqual || !criticalHealthEqual)
+            this._lastHealthTexture = this.healthTexture();
     }
 
 
@@ -228,6 +246,7 @@ public abstract class HealthBar {
 
     private void updateStyles()
     {
+        this.updateTextures();
         this.healthBarStyle.normal.background = this._lastHealthTexture;
         this.borderStyle.normal.background = this.borderTexture;
         this.backgroundStyle.normal.background = this.backgroundTexture;
