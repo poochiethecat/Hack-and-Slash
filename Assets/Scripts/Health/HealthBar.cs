@@ -14,18 +14,19 @@ public abstract class HealthBar {
     public int maxVisibleDistance = 100;
     [RangeAttributeWithDefault(1,100,50)]
     public int minWidth = 50;
+ 
+    
+    //TODO: Really set the maximum size with this, then we do not need maxWidth up there.
+    
+    ///<summary>
+    /// The Total size of the Healthbar
+    ///</summary>
+    public Rect healthRect;
 
-    // Rectangle of the healthbar, gets smaller with change in health
-    public Rect healthBox;
+    ///<summary>
+    /// The border around the healthbar
+    ///</summary>
     public RectOffset barBorder;
-
-
-
-    // style for the text
-
-    // TODO: Create protected delegate for these so that they can be configured only in the subclasses that need them.
-    public GUIStyle textStyleNormal;
-    public GUIStyle textStyleTargetted;
 
     public double cutoffPercentage = 0.2; // Below this ratio of health, the bar will be red
 
@@ -33,22 +34,22 @@ public abstract class HealthBar {
     ///<summary>
     /// The color chosen in the unity GUI, used for the background
     ///</summary>
-    public Color background = Color.cyan;
+    public Color backgroundColor = Color.cyan;
 
     ///<summary>
     /// The color chosen in the unity GUI, used for the broder
     ///</summary>
-    public Color border = Color.black;
+    public Color borderColor = Color.black;
 
     ///<summary>
     /// The color chosen in the unity GUI, used for the full Health
     ///</summary>
-    public Color fullHealth = Color.green;
+    public Color fullHealthColor = Color.green;
 
     ///<summary>
     /// The color chosen in the unity GUI, used for the critical Health
     ///</summary>
-    public Color criticalHealth = Color.red;
+    public Color criticalHealthColor = Color.red;
 
 
 
@@ -60,36 +61,59 @@ public abstract class HealthBar {
 
     protected Transform _transform;
 
-    // Style for the border/outer box
+    /// <summary>
+    /// The current text style.
+    /// </summary>
+    protected Func<GUIStyle> textStyle;
+
+    /// <summary>
+    /// Style for the border rect
+    /// </summary>
     protected GUIStyle borderStyle;
-    // Style for the background/inner box
+    /// <summary>
+    /// Style for the background rect
+    /// </summary>
     protected GUIStyle backgroundStyle;
+    /// <summary>
+    /// Style of the bar-part of the healthbar
+    /// </summary>
+    protected GUIStyle healthBarStyle;
+
+    /// <summary>
+    /// The background rect
+    /// </summary>
+    protected Rect backgroundRect;
+    /// <summary>
+    /// The border rect, has the maximum size of the healthbar.
+    /// </summary>
+    protected Rect borderRect;
 
 
-    // Rectangle of the max healthbar
-    protected Rect backgroundBox;
-    // Rectangle for the border, is healthBarBorder pixels bigger in all directions than the inner box
-    protected Rect borderBox;
-
-
-    // Background Texture, visible if health < 100%
+    /// <summary>
+    /// Background Texture, visible if health < 100%
+    /// </summary>
     protected Texture2D backgroundTexture ;
-    // Border Texture, this color takes the border
+    
+    /// <summary>
+    /// Border Texture, this color takes the border
+    /// </summary>
     protected Texture2D borderTexture;
-    // transparent texture for the background of the text
+    
+    /// <summary>
+    ///  transparent texture for the background of the text
+    /// </summary>
     protected Texture2D clearTexture ;
 
-    // Style of the bar-part of the healthbar
-    protected    GUIStyle healthBarStyle;
+
 
     /*
     * Private Variables, used for saving the state of colors.
     */
 
-    private Color _lastBackground = Color.cyan;
-    private Color _lastBorder = Color.black;
-    private Color _lastFullHealth = Color.green;
-    private Color _lastCriticalHealth = Color.red;
+    private Color _lastBackgroundColor = Color.cyan;
+    private Color _lastBorderColor = Color.black;
+    private Color _lastFullHealthColor = Color.green;
+    private Color _lastCriticalHealthColor = Color.red;
     private Texture2D _lastHealthTexture;
     private float _lastHealth;
     private bool firstrun;
@@ -153,10 +177,10 @@ public abstract class HealthBar {
     protected Texture2D BorderTexture
     {
         get {
-            if (this.borderTexture == null || !this.colorsEqual(this.border, this._lastBackground))
+            if (this.borderTexture == null || !this.colorsEqual(this.borderColor, this._lastBackgroundColor))
             {
-                this._lastBorder = this.border;
-                this.borderTexture = ColoredTexture.generatePixel(this._lastBorder);
+                this._lastBorderColor = this.borderColor;
+                this.borderTexture = ColoredTexture.generatePixel(this._lastBorderColor);
             }
             return this.borderTexture;
         }
@@ -165,10 +189,10 @@ public abstract class HealthBar {
     protected Texture2D BackgroundTexture
     {
         get {
-        if (this.backgroundTexture == null || !this.colorsEqual(this.background, this._lastBackground))
+        if (this.backgroundTexture == null || !this.colorsEqual(this.backgroundColor, this._lastBackgroundColor))
         {
-            this._lastBackground = this.background;
-            this.backgroundTexture = ColoredTexture.generatePixel(this._lastBackground);
+            this._lastBackgroundColor = this.backgroundColor;
+            this.backgroundTexture = ColoredTexture.generatePixel(this._lastBackgroundColor);
         }
             return this.backgroundTexture;
         }
@@ -201,11 +225,9 @@ public abstract class HealthBar {
 
             this.update();
 
-
-
-            GUI.Box(this.borderBox,"",this.borderStyle);
-            GUI.Box(this.backgroundBox,"",this.backgroundStyle);
-            GUI.Box(this.healthBox,"", this.healthBarStyle);
+            GUI.Box(this.borderRect,"",this.borderStyle);
+            GUI.Box(this.backgroundRect,"",this.backgroundStyle);
+            GUI.Box(this.healthRect,"", this.healthBarStyle);
             if (drawDescription)
             {
                 text = text + this.CurrentHealth + "/" + this.MaximumHealth;
@@ -216,13 +238,7 @@ public abstract class HealthBar {
             {
                 text = this.CurrentHealth + "/" + this.MaximumHealth;
             }
-            if (State.getState (this._transform).TargetState == StateName.Targetted)
-            {
-                GUI.Box(this.backgroundBox,text,this.textStyleTargetted);
-            } else
-            {
-                GUI.Box(this.backgroundBox,text,this.textStyleNormal);
-            }
+            GUI.Box(this.backgroundRect,text,this.textStyle());
         }
     }
     /// <summary>
@@ -252,8 +268,8 @@ public abstract class HealthBar {
 
     private void initTextures()
     {
-        this.backgroundTexture = ColoredTexture.generatePixel(this.background);
-        this.borderTexture = ColoredTexture.generatePixel(this.border);
+        this.backgroundTexture = ColoredTexture.generatePixel(this.backgroundColor);
+        this.borderTexture = ColoredTexture.generatePixel(this.borderColor);
         this.clearTexture = ColoredTexture.generatePixel(Color.clear);
     }
 
@@ -274,15 +290,6 @@ public abstract class HealthBar {
 
         this.healthBarStyle.normal.textColor = Color.black;
 
-        this.textStyleNormal = new GUIStyle(this.healthBarStyle);
-        this.textStyleNormal.stretchWidth = false;
-        this.textStyleNormal.normal.background = this.clearTexture;
-        this.textStyleNormal.fontStyle = FontStyle.Normal;
-
-        this.textStyleTargetted = new GUIStyle(this.healthBarStyle);
-        this.textStyleTargetted.stretchWidth = false;
-        this.textStyleTargetted.normal.background = this.clearTexture;
-        this.textStyleTargetted.fontStyle = FontStyle.BoldAndItalic;
 
     }
 
@@ -315,12 +322,7 @@ public abstract class HealthBar {
 
     private bool healthColorChanged()
     {
-        return !this.colorsEqual(this.criticalHealth,this._lastCriticalHealth) || !this.colorsEqual(this.fullHealth,this._lastFullHealth);
-    }
-
-    private bool approx(float a, float b, float tolerance = 0.0002f)
-    {
-        return Mathf.Abs(a - b) < tolerance;
+        return !this.colorsEqual(this.criticalHealthColor,this._lastCriticalHealthColor) || !this.colorsEqual(this.fullHealthColor,this._lastFullHealthColor);
     }
 
 
@@ -330,14 +332,14 @@ public abstract class HealthBar {
         switch (which)
         {
             case "fullHealth":
-                if (!this.colorsEqual(this.fullHealth,this._lastFullHealth))
-                    this._lastFullHealth = this.fullHealth;
-                returnvalue =  this._lastFullHealth;
+                if (!this.colorsEqual(this.fullHealthColor,this._lastFullHealthColor))
+                    this._lastFullHealthColor = this.fullHealthColor;
+                returnvalue =  this._lastFullHealthColor;
                 break;
             case "criticalHealth":
-                if (!this.colorsEqual(this.criticalHealth,this._lastCriticalHealth))
-                    this._lastCriticalHealth = this.criticalHealth;
-                returnvalue = this._lastCriticalHealth;
+                if (!this.colorsEqual(this.criticalHealthColor,this._lastCriticalHealthColor))
+                    this._lastCriticalHealthColor = this.criticalHealthColor;
+                returnvalue = this._lastCriticalHealthColor;
                 break;
         }
         return returnvalue;
@@ -346,7 +348,7 @@ public abstract class HealthBar {
     protected Texture2D HealthTexture
     {
         get {
-            if (healthChanged() || healthColorChanged())
+            if (this.healthChanged() || this.healthColorChanged())
                 this._lastHealthTexture = this.generateHealthTexture();
             return this._lastHealthTexture;
         }
@@ -357,7 +359,12 @@ public abstract class HealthBar {
         return Mathf.Approximately(a.r, b.r) && Mathf.Approximately(a.g, b.g) && Mathf.Approximately(a.b, b.g) && Mathf.Approximately(a.a,b.a);
     }
 
-    // Returns a 1x1 Texture with a color based on the current Health of the entity.
+    /// <summary>
+    /// Generates the health texture with a color based on the current HealthPercentage, it chooses linearly a color between FullHealth and CrititcalHealth
+    /// </summary>
+    /// <returns>
+    /// A 1x1 Texture with the computed color.
+    /// </returns>
     Texture2D generateHealthTexture()
     {
 
